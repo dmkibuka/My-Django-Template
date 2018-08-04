@@ -1,28 +1,23 @@
-from django.contrib.auth import authenticate, login, get_user_model
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from mysite.mixins import NextUrlMixin, RequestFormAttachMixin
 from django.contrib import messages
 from django.urls import reverse
-from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, FormView, DetailView, View, UpdateView
 from django.views.generic import CreateView, FormView
 from django.views.generic.edit import FormMixin
-from django.http import HttpResponse
-from django.shortcuts import render,redirect
-from django.utils.http import is_safe_url
+from django.shortcuts import render, redirect
 from django.utils.safestring import mark_safe
 
 
-from .forms import LoginForm, RegisterForm, GuestForm, ReactivateEmailForm, UserDetailChangeForm
-from .models import GuestEmail, EmailActivation
+from .forms import LoginForm, RegisterForm, GuestForm, ReactivateEmailForm
+from .models import EmailActivation
 
 from .signals import user_logged_in
 
 
 #LoginRequiredMixin,
 class AccountHomeView(LoginRequiredMixin, DetailView):
-    template_name = 'account/home.html'
+    template_name = 'accounts/home.html'
     def get_object(self):
         return self.request.user
 
@@ -39,7 +34,7 @@ class AccountEmailActivateView(FormMixin, View):
                 obj = confirm_qs.first()
                 obj.activate()
                 messages.success(request, "Your email has been confirmed. Please login.")
-                return redirect("account:login")
+                return redirect("accounts:login")
             else:
                 activated_qs = qs.filter(activated=True)
                 if activated_qs.exists():
@@ -48,7 +43,7 @@ class AccountEmailActivateView(FormMixin, View):
                     Do you need to <a href="{link}">reset your password</a>?
                     """.format(link=reset_link)
                     messages.success(request, mark_safe(msg))
-                    return redirect("account:login")
+                    return redirect("accounts:login")
         context = {'form': self.get_form(),'key': key}
         return render(request, 'registration/activation-error.html', context)
 
@@ -91,7 +86,7 @@ class GuestRegisterView(NextUrlMixin, RequestFormAttachMixin, CreateView):
 class LoginView(NextUrlMixin, RequestFormAttachMixin, FormView):
     form_class = LoginForm
     success_url = '/'
-    template_name = 'account/login.html'
+    template_name = 'accounts/login.html'
 
     def form_valid(self, form):
         next_path = self.get_next_url()
@@ -100,13 +95,13 @@ class LoginView(NextUrlMixin, RequestFormAttachMixin, FormView):
 
 class RegisterView(CreateView):
     form_class = RegisterForm
-    template_name = 'account/register.html'
+    template_name = 'accounts/register.html'
     success_url = '/accounts/login/'
 
 
 class UserDetailUpdateView(LoginRequiredMixin, UpdateView):
     form_class = UserDetailChangeForm
-    template_name = 'account/detail-update-view.html'
+    template_name = 'accounts/detail-update-view.html'
 
     def get_object(self):
         return self.request.user
@@ -117,4 +112,4 @@ class UserDetailUpdateView(LoginRequiredMixin, UpdateView):
         return context
 
     def get_success_url(self):
-        return reverse("account:home")
+        return reverse("accounts:home")

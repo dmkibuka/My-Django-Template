@@ -16,7 +16,7 @@ class ReactivateEmailForm(forms.Form):
         email = self.cleaned_data.get('email')
         qs = EmailActivation.objects.email_exists(email)
         if not qs.exists():
-            register_link = reverse("account:register")
+            register_link = reverse("accounts:register")
             msg = """This email does not exists, would you like to <a href="{link}">register</a>?
             """.format(link=register_link)
             raise forms.ValidationError(mark_safe(msg))
@@ -130,7 +130,7 @@ class LoginForm(forms.Form):
                 """
                 Not active, check email activation
                 """
-                link = reverse("account:resend-activation")
+                link = reverse("accounts:resend-activation")
                 reconfirm_msg = """Go to <a href='{resend_link}'>
                 resend confirmation email</a>.
                 """.format(resend_link = link)
