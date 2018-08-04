@@ -3,19 +3,17 @@ from mysite.mixins import NextUrlMixin, RequestFormAttachMixin
 from django.contrib import messages
 from django.urls import reverse
 from django.views.generic import CreateView, FormView, DetailView, View, UpdateView
-from django.views.generic import CreateView, FormView
 from django.views.generic.edit import FormMixin
 from django.shortcuts import render, redirect
 from django.utils.safestring import mark_safe
 
 
-from .forms import LoginForm, RegisterForm, GuestForm, ReactivateEmailForm
+from .forms import LoginForm, RegisterForm, GuestForm, ReactivateEmailForm, UserDetailChangeForm
 from .models import EmailActivation
 
 from .signals import user_logged_in
 
 
-#LoginRequiredMixin,
 class AccountHomeView(LoginRequiredMixin, DetailView):
     template_name = 'accounts/home.html'
     def get_object(self):

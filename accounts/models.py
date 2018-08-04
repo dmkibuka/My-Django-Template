@@ -70,8 +70,8 @@ class User(AbstractBaseUser):
     staff       = models.BooleanField(default=False) # staff user non superuser
     admin       = models.BooleanField(default=False) # superuser
     timestamp   = models.DateTimeField(auto_now_add=True)
-    confirm     = models.BooleanField(default=False)
-    confirmed_date     = models.DateTimeField(default=False)
+    # confirm     = models.BooleanField(default=False)
+    # confirmed_date     = models.DateTimeField(auto_now_add=False)
 
     USERNAME_FIELD = 'email'
     """
@@ -197,8 +197,8 @@ class EmailActivation(models.Model):
                     'path': path,
                     'email': self.email
                 }
-                txt_ = get_template("registration/emails/verify.txt").render(context)
-                html_ = get_template("registration/emails/verify.html").render(context)
+                txt_ = get_template("accounts/registration/emails/verify.txt").render(context)
+                html_ = get_template("accounts/registration/emails/verify.html").render(context)
                 subject = '1-Click Email Verification'
                 from_email = settings.DEFAULT_FROM_EMAIL
                 recipient_list = [self.email]
