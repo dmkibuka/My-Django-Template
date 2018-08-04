@@ -214,7 +214,6 @@ class EmailActivation(models.Model):
         return False
 
 
-
 def pre_save_email_activation(sender, instance, *args, **kwargs):
     if not instance.activated and not instance.forced_expired:
         if not instance.key:
