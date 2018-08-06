@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     # Third_Party_Apps
     'crispy_forms',
+    'storages',
 ]
 
 AUTH_USER_MODEL = 'accounts.User' #custom user model to override generic user model
@@ -83,6 +84,9 @@ MANAGERS = (
 ADMINS = MANAGERS
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+FORCE_SESSION_TO_ONE = False
+FORCE_INACTIVE_USER_ENDSESSION= False
 
 TEMPLATES = [
     {
@@ -160,3 +164,10 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
 PROTECTED_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "protected_media")
+
+"""
+Uncomment belows for AWS S3 services once bucket and credentials have been setup
+"""
+#from mysite.aws.conf import *
+
+
