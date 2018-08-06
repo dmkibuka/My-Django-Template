@@ -5,7 +5,7 @@ from .forms import ContactForm
 
 def home_page(request):
     context = {
-        "page-title":"My Family | Welcome",
+        "page_title":"My Family | Welcome",
         "content":" Welcome to the homepage.",
 
     }
