@@ -1,8 +1,14 @@
-<p>Hello Valued Customer,</p>
+{% load i18n %}
 
-<p>Please activate your account for {{ email }} by clicking the link below:</p>
+{% blocktrans %}
+    <p>Hello Valued Customer,</p>
+	<p>Please activate your account for {{ email }} by clicking the link below:</p>
+{% endblocktrans %}
 
 <p><a href='{{ path }}'>{{ path }}</a></p>
-<p>Once you activate, you can login!</p>
-<p>Thank you,</p>
-<p>Visarget Photography</p>
+
+{% blocktrans %}
+    <p>Once you activate, you can login!</p>
+	<p>Thank you,</p>
+{% endblocktrans %}
+

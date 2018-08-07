@@ -1,11 +1,13 @@
-Hello Valued Customer,
+{% load i18n %}
 
-Please activate your account for {{ email }} by clicking the link below:
+{% blocktrans %}
+    Hello Valued Customer,
+	Please activate your account for {{ email }} by clicking the link below:
+{% endblocktrans %}
 
 {{ path }}
 
-Once you activate, you can login!
-
-Thank you,
-
-Visarget Photography
+{% blocktrans %}
+    Once you activate, you can login!
+	Thank you,
+{% endblocktrans %}

@@ -13,16 +13,17 @@
 	{% block page_title %}{% trans "Sign In" %}{% endblock page_title %} 
 
 	{% block content %}
+	<div class="container">
 		<div class="row mt-5">
-  			<div class="col-12 col-sm-6 offset-sm-3 col-lg-3 offset-lg-5">
+  			<div class="col-lg-6 offset-lg-3">
   				<div class="card mx-auto">
   					<div class="card-body">
 					    <h5 class="card-title font-weight-normal text-center">{% trans "Sign In" %}</h5>
-					    <h6 class="card-subtitle mb-2 text-muted text-center">Welcome to Our Site</h6>
+					    <h6 class="card-subtitle mb-2 text-muted text-center"> {% trans "Welcome to Our Site" %} </h6>
 					    <form method='POST'> 
 					    	{% csrf_token %}
 							{{ form|crispy }}
-							<button type='submit' class='btn btn-outline-primary btn-block mb-3'>Sign In</button>
+							<button type='submit' class='btn btn-outline-primary btn-block mb-3'> {% trans "Sign In" %} </button>
 						</form>
 			    		<p>{% trans "Forgot password" %}? <a href=" {% url 'password:password_reset' %} " class="card-link">{% trans "Reset" %}</a>!</p>
 						<p>{% trans "Not member" %}? <a href=" {% url 'accounts:register' %} " class="card-link">{% trans "Register" %}</a>!</p>
@@ -30,7 +31,7 @@
 				</div>
   			</div>
 		</div>
-		
+	</div>	
 	{% endblock %}
 
 	

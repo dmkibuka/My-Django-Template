@@ -1,14 +1,29 @@
-{% extends "base/base.html" %}
+{% extends "base/base_2.html" %}
 
-{% block content %}
+	{% load i18n %}
 
-<div class='row'>
-	<div class='col text-center'>
+	{% block extrahead %}
+		{% load  static %}
+		<!-- Cover CSS -->
+		<link rel="stylesheet" type="text/css" href=" {% static "css/signin.css" %} "> 
+	{% endblock extrahead %}
 
-	    <h1 class='my-5'>Permission Denied</h1>
-	    <p>403 Error</p>
+	{% block page_title %}{% trans "403 Error" %}{% endblock page_title %} 
 
-	</div>
-</div>
+	{% block content %}
+	<div class="container">
+		<div class="row mt-5">
+  			<div class="col-lg-8 offset-lg-2">
+  				<div class="card mx-auto">
+  					<div class="card-body text-center">
+					    <h5 class="card-title font-weight-normal text-center">{% trans "403 Error: Permission Denied" %}</h5>
+					    <hr>
+					    <p> {% trans "Bad Request, Permission denied" %} </p>
+  					</div>
+				</div>
+  			</div>
+		</div>
+	</div>	
+	{% endblock %}
 
-{% endblock %}
+

@@ -6,6 +6,7 @@ body {
 body {
   background-color: #333;
   color: #08737f;
+  padding-top: 40px;
 }
 
 .card {
@@ -13,8 +14,6 @@ body {
 }
 
 footer {
-  position:absolute;
-  bottom:0;
-  width:100%;
+  font-size: .6rem;
   color: #f8f8f8;
 }
