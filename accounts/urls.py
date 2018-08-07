@@ -9,6 +9,7 @@ from .views import (
                 AccountEmailActivateView,
                 UserDetailUpdateView,
             )
+
 app_name = 'accounts'
 
 urlpatterns = [
