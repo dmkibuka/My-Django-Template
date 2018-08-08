@@ -1,19 +1,36 @@
-{% extends 'base/base.html' %}
+{% extends 'base/base_2.html' %}
 
-{% load crispy_forms_tags %}
+  {% load i18n %}
 
-{% block content %}
+  {% load crispy_forms_tags %}
 
-  <div class='row'>
-    <div class='col'>
-      <div class='col-md-6 col-12 mx-auto'>
-        <h1>{{ content | upper }}</h1>
-        <form class='contact-form' method='POST' action='{% url "contact" %}'> {% csrf_token %}
-          {{ form|crispy }}
-          <button type='submit' class='btn btn-outline-info float-right'>Submit</button>
-        </form>
-      </div>
+  {% block extrahead %}
+    {% load  static %}
+    <!-- Cover CSS -->
+    <link rel="stylesheet" type="text/css" href=" {% static "css/signin.css" %} "> 
+  {% endblock extrahead %}
+
+  {% block page_title %} {% blocktrans %}
+      {{page_title}}
+  {% endblocktrans %} {% endblock page_title %} 
+
+  {% block content %}
+  <div class="container">
+    <div class="row mt-5">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="card mx-auto">
+            <div class="card-body">
+              <h5 class="card-title font-weight-normal text-center"> {% blocktrans with page_header|upper as page_header %}
+                  {{page_header}}
+              {% endblocktrans %} </h5>
+              <hr>
+              <form class='contact-form' method='POST' action='{% url "contact" %}'> {% csrf_token %}
+                {{ form|crispy }}
+                <button type='submit' class='btn btn-outline-info float-right'> {% trans "Send Message" %} </button>
+              </form>
+            </div>
+        </div>
+        </div>
     </div>
-  </div>
-
-{% endblock %}
+  </div>  
+  {% endblock %}

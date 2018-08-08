@@ -6,8 +6,9 @@ from .forms import ContactForm
 def home_page(request):
     context = {
         "page_title":"My Family | Welcome",
-        "content":" Welcome to the homepage.",
-
+        "brand_name":"Mysite",
+        "page_header":"Family Cover your page.",
+        "cover_intro":"Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own."
     }
     if request.user.is_authenticated:
         context["premium_content"] = "YEAHHHHHH"
@@ -15,7 +16,7 @@ def home_page(request):
 
 def about_page(request):
     context = {
-        "page-title":"About E-Commerce",
+        "page_title":"About Us",
         "content":" Welcome to the about page."
     }
     return render(request, "about_page.html", context)
@@ -23,8 +24,8 @@ def about_page(request):
 def contact_page(request):
     contact_form = ContactForm(request.POST or None)
     context = {
-        "page-title":"Contact Us",
-        "content":" Welcome to the contact page.",
+        "page_title":"Contact Us",
+        "page_header":" We Love to hear from you",
         "form": contact_form
     }
     if contact_form.is_valid():
