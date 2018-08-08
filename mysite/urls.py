@@ -31,6 +31,7 @@ urlpatterns = [
     path('accounts/', include('accounts.passwords.urls', namespace='password')),
     path('account/', RedirectView.as_view(url='/accounts')),
     path('settings/', RedirectView.as_view(url='/accounts')),
+    path('wedding/', include('wedding.urls', namespace='wedding')),
     path('admin/', admin.site.urls),
 ]
 

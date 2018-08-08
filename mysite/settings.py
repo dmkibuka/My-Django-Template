@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
      # Custom_Apps
     'accounts',
+    'wedding',
 
     # Third_Party_Apps
     'crispy_forms',
