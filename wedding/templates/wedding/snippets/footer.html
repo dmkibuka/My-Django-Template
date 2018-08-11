@@ -1,0 +1,28 @@
+<!-- Footer ---->
+{% load static %}
+<footer class="footerhead" style="background-image: url({% static 'wedding/images/footer_bg.jpg' %})">
+	<div class="container">
+		<div class="row">
+			<div class="col my-auto">
+				<div class="footer-content mx-auto">
+					<h1 class="mb-1">David <i class="fa fa-heart"></i> Allen<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="footer-heading"></h1>
+					<h2 class="mb-5">Forever And Always Our Love<br>Thank You</h2>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="copyright">
+	<div class="row w-100">
+			<div class="col mx-auto">
+				
+					<p>
+						&copy;
+						{% now 'Y' %},
+						{{request.get_host}} | All rights reserved <br>
+						<a href="#">Terms of Use | Privacy Policy</a>
+					</p>
+				
+			</div>
+		</div>
+</div>

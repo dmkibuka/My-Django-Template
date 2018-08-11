@@ -1,0 +1,30 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<!-- Required meta tags -->
+  	{% include "base/snippets/header.html" %}
+    
+    {% block extrahead %}{% endblock extrahead %}
+
+    <title> {% block page_title %}{% endblock page_title %} </title>
+    
+  </head>
+  <body>
+  	{% include "wedding/snippets/navbar.html" %}
+
+  	{% block carousel %}{% endblock carousel %}
+
+  	{% block content %}
+  		<h1>Hello, world!</h1>
+  	{% endblock content %}
+
+    {% include "wedding/snippets/footer.html" %}
+
+  	{% include "base/snippets/js.html" %}
+
+      <!-- Optional JavaScript -->
+  	{% block extrajs %}{% endblock extrajs %}
+
+  </body>
+</html>

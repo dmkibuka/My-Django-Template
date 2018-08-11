@@ -1,0 +1,144 @@
+/* latin-ext */
+@font-face {
+  font-family: 'Alex Brush';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alex Brush Regular'), local('AlexBrush-Regular'), url(https://fonts.gstatic.com/s/alexbrush/v8/5PuXjqx-EJv6LI_cWeiWqyEAvth_LlrfE80CYdSH47w.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Alex Brush';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alex Brush Regular'), local('AlexBrush-Regular'), url(https://fonts.gstatic.com/s/alexbrush/v8/IdwaSrUcr-IskDo5YUNTVfk_vArhqVIZ0nv9q090hN8.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Philosopher Italic'), local('Philosopher-Italic'), url(https://fonts.gstatic.com/s/philosopher/v9/_9Hnc_gz9k7Qq6uKaeHKmRNcqx07xvyppV96iFRdwiM.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Philosopher Italic'), local('Philosopher-Italic'), url(https://fonts.gstatic.com/s/philosopher/v9/_9Hnc_gz9k7Qq6uKaeHKmefhZE2STYI3KzBGzrJG_ik.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Philosopher Italic'), local('Philosopher-Italic'), url(https://fonts.gstatic.com/s/philosopher/v9/_9Hnc_gz9k7Qq6uKaeHKmfoTkEokFSrSpvYSpZOeZRs.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Philosopher Italic'), local('Philosopher-Italic'), url(https://fonts.gstatic.com/s/philosopher/v9/_9Hnc_gz9k7Qq6uKaeHKmcu2Q0OS-KeTAWjgkS85mDg.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Philosopher Bold Italic'), local('Philosopher-BoldItalic'), url(https://fonts.gstatic.com/s/philosopher/v9/PuKlryTcvTj7-qZWfLCFIMDmOtrqdFwUcwXAuhp1QCY.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Philosopher Bold Italic'), local('Philosopher-BoldItalic'), url(https://fonts.gstatic.com/s/philosopher/v9/PuKlryTcvTj7-qZWfLCFIINNZfQjdGza5CVL5EXb104.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Philosopher Bold Italic'), local('Philosopher-BoldItalic'), url(https://fonts.gstatic.com/s/philosopher/v9/PuKlryTcvTj7-qZWfLCFIAF4hM5sQ7qK06vqS1ULhSo.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Philosopher Bold Italic'), local('Philosopher-BoldItalic'), url(https://fonts.gstatic.com/s/philosopher/v9/PuKlryTcvTj7-qZWfLCFII9ObOXPY1wUIXqKtDjSdsY.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v9/OttjxgcoEsufOGSINYBGLTTOQ_MqJVwkKsUn0wKzc2I.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v9/OttjxgcoEsufOGSINYBGLTUj_cnvWIuuBMVgbX098Mw.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v9/OttjxgcoEsufOGSINYBGLb6up8jxqWt8HVA3mDhkV_0.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Philosopher Regular'), local('Philosopher-Regular'), url(https://fonts.gstatic.com/s/philosopher/v9/OttjxgcoEsufOGSINYBGLY4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Philosopher Bold'), local('Philosopher-Bold'), url(https://fonts.gstatic.com/s/philosopher/v9/napvkewXG9Gqby5vwGHICJ6iIh_FvlUHQwED9Yt5Kbw.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Philosopher Bold'), local('Philosopher-Bold'), url(https://fonts.gstatic.com/s/philosopher/v9/napvkewXG9Gqby5vwGHICC_vZmeiCMnoWNN9rHBYaTc.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Philosopher Bold'), local('Philosopher-Bold'), url(https://fonts.gstatic.com/s/philosopher/v9/napvkewXG9Gqby5vwGHICGhQUTDJGru-0vvUpABgH8I.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF9, U+20AB;
+}
+/* latin */
+@font-face {
+  font-family: 'Philosopher';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Philosopher Bold'), local('Philosopher-Bold'), url(https://fonts.gstatic.com/s/philosopher/v9/napvkewXG9Gqby5vwGHICIlIZu-HDpmDIZMigmsroc4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}

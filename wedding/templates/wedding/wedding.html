@@ -1,0 +1,341 @@
+{% extends "base/base_wedding.html" %}
+
+	{% load i18n %}
+
+	{% load crispy_forms_tags %}
+
+	{% block extrahead %}
+		{% load  static %}
+		<!-- Animate CSS -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"> 
+	
+		<!-- OwlCarousel2 CSS -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"> 
+	
+		<!-- OwlCarousel2 Theme CSS -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"> 
+		
+		<!-- Magnific-Popup CSS -->
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"> 
+		
+		<!-- Fonts CSS -->
+		<link rel="stylesheet" type="text/css" href=" {% static "wedding/css/fonts.css" %} "> 
+		
+		<!-- Wedding CSS -->
+		<link rel="stylesheet" type="text/css" href=" {% static "wedding/css/wedding.css" %} "> 
+		
+	{% endblock extrahead %}
+
+	{% block page_title %}{% trans "David & Allen" %}{% endblock page_title %} 
+
+	{% block content %}
+		<section class="getmarried-features mb-5" id="getmarried-features" style="background-image: url({% static 'wedding/images/married.jpg' %})">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<div class="card">
+							<div class="card-body">
+								<h1 class="card-title">we gettin' married<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h1>
+								<hr class="light mb-3">
+								<h2 class="card-subtitle my-auto">David  <i class="fa fa-heart"></i><i class="fa fa-heart"></i>  Allen</h2>
+								<hr class="light mb-4">
+								<p class="card-text"><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></p>
+								<h1 class="btn btn-outline-warning btn-lg disabled btn-block">Save The Date<br>20 December 2018</h1>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="about-features bg-light" id="about-features">
+			<div class="container">
+				<div class="section-heading">
+					<h2>Groom and Bride<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h2>
+				</div>
+				<div class="row">
+					<div class="col-lg-4 my-auto">
+						<div class="about-detail">
+							<div class="about-detail_img text-center">
+								<img src=" {% static 'wedding/images/groom.png' %} " class="img-fluid rounded-circle" alt="The Groom">
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 my-auto">
+						<div class="about-detail-info">
+							<span class="title-block text-center">About The Groom</span>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							<h2>David</h2>
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4 order-md-8 my-auto">
+						<div class="about-detail">
+							<div class="about-detail_img text-center">
+								<img src=" {% static 'wedding/images/bride.png' %} " class="img-fluid rounded-circle" alt="The Groom">
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 order-md-4 my-auto">
+						<div class="about-detail-info">
+							<span class="title-block text-center">About The Bride</span>
+							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							<h2>Allen</h2>
+							<ul class="list-inline">
+								<li class="list-inline-item"><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+								<li class="list-inline-item"><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="story-features bg-dark" id="story-features">
+			<div class="container">
+				<div class="section-heading">
+					<h2>Our true love story<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h2>
+
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card">
+							<img src=" {% static 'wedding/images/story_1.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title"><i class="fa fa-heart"></i> how we met <i class="fa fa-heart"></i></h3>
+								<h6>20 December 2017</h6>
+								<h4>That day changed Life</h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4 order-md-8">
+						<div class="card">
+							<img src=" {% static 'wedding/images/story_2.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8 order-md-4">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title"><i class="fa fa-heart"></i> our first date <i class="fa fa-heart"></i></h3>
+								<h6>20 December 2018</h6>
+								<h4>Our Best Dinner Ever</h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4">
+						<div class="card">
+							<img src=" {% static 'wedding/images/story_3.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title"><i class="fa fa-heart"></i> how he proposed <i class="fa fa-heart"></i></h3>
+								<h6>20 December 2018</h6>
+								<h4>That was so wonderful</h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4 order-md-8">
+						<div class="card">
+							<img src=" {% static 'wedding/images/story_4.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8 order-md-4">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title"><i class="fa fa-heart"></i> our first kiss <i class="fa fa-heart"></i></h3>
+								<h6>20 December 2019</h6>
+								<h4>Feeling Awesome </h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4">
+						<div class="card">
+							<img src=" {% static 'wedding/images/story_5.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title"><i class="fa fa-heart"></i> now we together <i class="fa fa-heart"></i></h3>
+								<h6>20 December 2019</h6>
+								<h4>We're waiting for the best</h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="invitation-features mb-5" id="invitation-features" style="background-image: url({% static 'wedding/images/event_bg.jpg' %})">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+						<div class="card">
+							<div class="card-body">
+								<h1 class="card-title">Wedding Invitation</h1>
+								<hr class="light mb-3">
+								<h2 class="card-subtitle my-auto">20 December 2018 <br> time: 7:30pm</h2>
+								<hr class="light mb-3">
+								<p class="card-text">Agape Word Center Church <br> Beltsville, Maryland 20705</p>
+								<a href="#" class="btn btn-outline-warning btn-lg">RSVP</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bridesmaid-features bg-light" id="bridesmaid-features">
+			<div class="container">
+				<div class="section-heading">
+					<h2>Groomsmen &amp; Bridesmaid<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h2>
+
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card">
+							<img src=" {% static 'wedding/images/maids_1.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">Peter Walters</h3>
+								<!--h6>20 December 2017</h6-->
+								<h4>A word of wisdom</h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4 order-md-8">
+						<div class="card">
+							<img src=" {% static 'wedding/images/maids_2.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8 order-md-4">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">joyce kiyemba</i></h3>
+								<!--h6>20 December 2017</h6-->
+								<h4>A word of wisdom</h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4">
+						<div class="card">
+							<img src=" {% static 'wedding/images/maids_3.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">David Smith</h3>
+								<!--h6>20 December 2017</h6-->
+								<h4>A word of wisdom</h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row mt-5">
+					<div class="col-md-4 order-md-8">
+						<div class="card">
+							<img src=" {% static 'wedding/images/maids_4.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
+						</div>
+					</div>
+					<div class="col-md-8 order-md-4">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">Juliet Babirye</h3>
+								<!--h6>20 December 2017</h6-->
+								<h4>A word of wisdom</h4>
+								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="gift-features bg-dark" id="gift-features">
+			<div class="container">
+				<div class="section-heading">
+					<h2>Gift registration<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h2>
+					<p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt.</p>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-6 col-md-4 mb-2">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">Macy's</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4 mb-2">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">David's</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4 mb-2">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">Bed &amp; bath</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4 mb-2">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">JCpenny</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4 mb-2">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">Costco</h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-6 col-md-4 mb-2">
+						<div class="card">
+							<div class="card-body">
+								<h3 class="card-title">Geico</h3>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endblock %}
+
+	

@@ -1,0 +1,673 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'Philosopher';
+  font-size: 16px;
+  line-height: 23px;
+  color: #797979;
+  overflow-x: hidden;
+}
+
+a {
+  color: #fdcc52;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+}
+
+a:hover, a:focus {
+  color: #fcbd20;
+}
+
+hr {
+  max-width: 100px;
+  margin: 25px auto 0;
+  border-width: 1px;
+  border-color: rgba(34, 34, 34, 0.1);
+}
+
+hr.light {
+  border-color: white;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .title-block {
+  font-family: 'Alex Brush', cursive;
+  line-height: 1.1;
+  font-weight:400;
+  color: #222222;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  text-transform: capitalize;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 50px 0;
+}
+
+section h2 {
+  font-size: 50px;
+}
+
+#mainNav {
+  border-color: rgba(34, 34, 34, 0.05);
+  background-color: white;
+  -webkit-transition: all .35s;
+  -moz-transition: all .35s;
+  transition: all .35s;
+  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+#mainNav .navbar-brand {
+  color: #fdcc52;
+  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+#mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
+  color: #fcbd20;
+}
+
+#mainNav .navbar-toggler {
+  font-size: 12px;
+  padding: 8px 10px;
+  color: #222222;
+}
+
+#mainNav .navbar-nav > li > a {
+  font-size: 11px;
+  font-family: 'Lato', 'Helvetica', 'Arial', 'sans-serif';
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+#mainNav .navbar-nav > li > a.active {
+  color: #fdcc52 !important;
+  background-color: transparent;
+}
+
+#mainNav .navbar-nav > li > a.active:hover {
+  background-color: transparent;
+}
+
+#mainNav .navbar-nav > li > a,
+#mainNav .navbar-nav > li > a:focus {
+  color: #222222;
+}
+
+#mainNav .navbar-nav > li > a:hover,
+#mainNav .navbar-nav > li > a:focus:hover {
+  color: #fdcc52;
+}
+
+@media (min-width: 992px) {
+  #mainNav {
+    border-color: transparent;
+    background-color: transparent;
+  }
+  #mainNav .navbar-brand {
+    color: fade(white, 70%);
+  }
+  #mainNav .navbar-brand:hover, #mainNav .navbar-brand:focus {
+    color: white;
+  }
+  #mainNav .navbar-nav > li > a,
+  #mainNav .navbar-nav > li > a:focus {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  #mainNav .navbar-nav > li > a:hover,
+  #mainNav .navbar-nav > li > a:focus:hover {
+    color: white;
+  }
+  #mainNav.navbar-shrink {
+    border-color: rgba(34, 34, 34, 0.1);
+    background-color: white;
+  }
+  #mainNav.navbar-shrink .navbar-brand {
+    color: #222222;
+  }
+  #mainNav.navbar-shrink .navbar-brand:hover, #mainNav.navbar-shrink .navbar-brand:focus {
+    color: #fdcc52;
+  }
+  #mainNav.navbar-shrink .navbar-nav > li > a,
+  #mainNav.navbar-shrink .navbar-nav > li > a:focus {
+    color: #222222;
+  }
+  #mainNav.navbar-shrink .navbar-nav > li > a:hover,
+  #mainNav.navbar-shrink .navbar-nav > li > a:focus:hover {
+    color: #fdcc52;
+  }
+}
+
+header.masthead {
+  position: relative;
+  width: 100%;
+  padding-top: 150px;
+  padding-bottom: 0px; 
+  color: white;
+  background: url("../img/bg-pattern.png"), #7b4397;
+  background: url("../img/bg-pattern.png"), -webkit-linear-gradient(to left, #7b4397, #dc2430);
+  background: url("../img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+}
+
+header.masthead .header-content {
+  max-width: 500px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+header.masthead .header-content h1 {
+  font-size: 30px;
+}
+
+@media (min-width: 992px) {
+  header.masthead {
+    height: 25vh;
+    min-height: 100px;
+    padding-top: 0;
+    padding-bottom: 150px;
+  }
+  header.masthead .header-content {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  header.masthead .header-content h1 {
+    font-size: 50px;
+    margin-top: 40px;
+  }
+}
+
+/**** Footer *******/
+
+footer.footerhead {
+  position: relative;
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 100px; 
+  color: white;
+  float: left;
+  background-position: 25% 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+footer.footerhead .footer-content {
+  max-width: footer
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+footer.footerhead .footer-content h1 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+footer.footerhead .footer-content h1 i {
+  color: #f07677;
+}
+
+footer.footerhead .footer-content h2 {
+  font-size: 40px;
+  color: #f07677;
+}
+
+.copyright {
+  display: block;
+  text-align: center;
+  background-color: #333;
+}
+
+.copyright p {
+  color: #fff;
+  font-size: .7rem;
+}
+
+@media (min-width: 992px) {
+  footer.footerhead {
+    height: 75vh;
+    min-height: 150px;
+    padding-top: 0;
+    padding-bottom: 150px;
+    background-position: center center;
+  }
+  footer.footerhead .footer-content {
+    margin-bottom: 0;
+    text-align: center;
+  }
+  footer.footerhead .footer-content h1 {
+    font-size: 65px;
+    margin-top: 15%;
+  }
+}
+
+
+/******** Getting Married *******/
+
+section.getmarried-features {
+  float:left;
+  width:100%;
+  background-size:cover;
+  background-position:50% 50%;
+  background-repeat:no-repeat;
+  position: relative;
+  z-index:0;
+}
+
+section.getmarried-features .card {
+  background-color: rgba(0,0,0,.6);
+  color: #222222;
+  padding: 10px;
+  text-align: center;
+}
+
+section.getmarried-features .card-body .card-title {
+  color: #f8f8f8;
+  font-size: 2rem;
+}
+
+section.getmarried-features .card-body .card-subtitle {
+  font-family: 'Philosopher';
+  color: #f8f8f8;
+  font-size: 2rem;
+}
+
+section.getmarried-features .card-body .card-subtitle i:first-child {
+  -ms-transform: rotate(-40deg); /* IE 9 */
+  -webkit-transform: rotate(-40deg); /* Safari 3-8 */
+  transform: rotate(-40deg);
+  color: #f07677
+}
+
+section.getmarried-features .card-body .card-subtitle i:last-child {
+  -ms-transform: rotate(40deg); /* IE 9 */
+  -webkit-transform: rotate(40deg); /* Safari 3-8 */
+  transform: rotate(40deg);
+  color: #f07677
+}
+
+section.getmarried-features .card-body .card-text img {
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Safari 3-8 */
+  transform: rotate(180deg);
+}
+
+section.getmarried-features .card-body .btn-outline-warning {
+  color: #fff;
+  border-color: #f07677;
+}
+
+section.getmarried-features .card-body .btn-outline-warning:hover {
+  color: #fff;
+  border-color: #f07677;
+  background-color: #f07677;
+}
+
+section.getmarried-features .card-body .btn {
+  font-family: 'Philosopher';
+  font-weight: 400;
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+section.getmarried-features .card::before{
+  content: '';
+  position: absolute;
+  display: inline-block;
+  background-color: rgb(240, 118, 119);
+  width: 80%;
+  height: 20px;
+  top: -10px;
+  right: 10%;
+  border-radius: 2px;
+  z-index: 0;
+
+}
+
+@media (min-width: 992px) {
+  section.getmarried-features .card-body .card-title {
+  font-size: 3rem;
+  }
+
+  section.getmarried-features .card-body .btn {
+    font-size: 2rem;
+  }
+
+  section.getmarried-features .card-body .card-subtitle {
+  font-size: 3rem;
+  }
+}
+
+
+/***** About Groom and Bride*****/
+
+section.about-features .section-heading h2 {
+  font-family: 'Alex Brush', cursive;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #222222;
+  text-align: center;
+  text-transform: capitalize;
+  display: block;
+  font-size: 2.5rem;
+}
+
+section.about-features .title-block {
+  display: block;
+  text-transform: capitalize;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #222222;
+  font-family: 'Philosopher';
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+section.about-features .about-detail-info h2 {
+  color: #f07677;
+  font-size: 30px;
+  text-align: center;
+  position: relative;
+  display: block;
+}
+
+section.about-features .about-detail-info h2::after {
+  content: '~';
+  position: absolute;
+  color: #f07677;
+  font-size: 80px;
+  z-index: 0;
+  bottom: 0px;
+  top: -10px;
+}
+
+section.about-features .about-detail-info h2::before {
+  content: '~';
+  position: absolute;
+  color: #f07677;
+  font-size: 80px;
+  bottom: 0px;
+  top: -10px;
+  right: 0px;
+  left: -92px;
+  z-index: 0;
+}
+
+section.about-features .about-detail .about-detail_img img {
+  display:inline-block;
+  border: 5px solid #e1e1e1;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+  -webkit-border-radius: 100px 100px 100px 100px;
+  border-radius: 100px 100px 100px 100px;
+}
+
+section.about-features .row:hover .about-detail_img img {
+  border: 5px solid #f07677;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+}
+
+
+section.about-features .about-detail-info ul {
+  list-style: none;
+  text-align: center;
+  margin: 3px;
+}
+
+section.about-features .about-detail-info ul li  {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #000000;
+  border: 1px solid #e4e4e4;
+  background-color: #ffffff;
+  border-radius: 100%;
+}
+
+section.about-features .about-detail-info ul li a {
+  color: #000000;
+}
+
+section.about-features .about-detail-info ul li:hover {
+  background-color:#f07677;
+  color:#ffffff;
+  border:1px solid #f07677;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+section.about-features .about-detail-info p {
+  text-align:center;
+}
+
+@media (min-width: 992px) {
+  section.about-features .section-heading h2 {
+    font-size: 70px;
+  }
+}
+
+/******* Our Love Story********/
+
+section.story-features .section-heading h2 {
+  font-family: 'Alex Brush', cursive;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #f8f8f8;
+  text-align: center;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+section.story-features .card-body .card-title {
+  color: #f07677;
+  text-align: center;
+}
+
+section.story-features .card-body h6 {
+  font-family: 'Philosopher';
+  text-align: center;
+}
+
+section.story-features .card-body h4 {
+  font-family: 'Philosopher';
+  color: #f07677;
+  text-align: center;
+}
+
+section.story-features .card-body p {
+  text-align: center;
+}
+
+@media (min-width: 992px) {
+  section.story-features .section-heading h2 {
+    font-size: 70px;
+  }
+
+  section.story-features .card-body .card-title {
+  font-size: 45px;
+  }
+}
+
+
+/***********Bridesmaid & Groomsmaid*********/
+
+
+section.bridesmaid-features .section-heading h2 {
+  font-family: 'Alex Brush', cursive;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #222222;
+  text-align: center;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+section.bridesmaid-features .card-body .card-title {
+  color: #f07677;
+  text-align: center;
+}
+
+section.bridesmaid-features .card-body h6 {
+  font-family: 'Philosopher';
+  text-align: center;
+}
+
+section.bridesmaid-features .card-body h4 {
+  font-family: 'Philosopher';
+  color: #f07677;
+  text-align: center;
+}
+
+section.bridesmaid-features .card-body p {
+  text-align: center;
+}
+
+section.bridesmaid-features .card img {
+  display:inline-block;
+  border: 5px solid #e1e1e1;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
+
+section.bridesmaid-features .row:hover .card img {
+  border: 5px solid #f07677;
+  -webkit-transition: all 2s;
+  -moz-transition: all 2s;
+  -ms-transition: all 2s;
+  -o-transition: all 2s;
+  transition: all 2s;
+}
+
+@media (min-width: 992px) {
+  section.bridesmaid-features .section-heading h2 {
+    font-size: 70px;
+  }
+
+  section.bridesmaid-features .card-body .card-title {
+  font-size: 45px;
+  }
+}
+
+
+/******** Invitation and Event *******/
+
+section.invitation-features {
+  float:left;
+  width:100%;
+  background-size:cover;
+  background-position:50% 50%;
+  background-repeat:no-repeat;
+  position: relative;
+  z-index:0;
+}
+
+section.invitation-features .card {
+  background-color: rgba(0, 0, 0, .4);
+  color: #f8f8f8;
+  padding: 10px;
+  text-align: center;
+}
+
+section.invitation-features .card-body .card-title {
+  color: #fff;
+}
+
+section.invitation-features .card-body .card-subtitle {
+  font-family: 'Philosopher';
+  color: #f07677;
+  font-size: 2rem;
+}
+
+section.invitation-features .card-body .btn-outline-warning {
+  color: #fff;
+  border-color: #f07677;
+}
+
+section.invitation-features .card-body .btn-outline-warning:hover {
+  color: #fff;
+  border-color: #f07677;
+  background-color: #f07677;
+}
+
+section.invitation-features .card-body .btn {
+  font-weight: 400;
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  section.invitation-features .card-body .card-title {
+  font-size: 65px;
+  }
+}
+
+
+/******** Gift Registrations*************/
+
+section.gift-features .section-heading h2 {
+  font-family: 'Alex Brush', cursive;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #f8f8f8;
+  text-align: center;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+section.gift-features .card-body .card-title {
+  font-family: 'Philosopher';
+  color: #f8f8f8;
+  font-size: 2rem;
+  text-align: center;
+}
+
+section.gift-features .card-body .card-title:hover {
+  color: #f07677;
+}
+
+section.gift-features .card {
+  background-color: #f07677;
+}
+
+section.gift-features .card:hover {
+  background-color: #f8f8f8;
+}
+
+@media (min-width: 992px) {
+  section.gift-features .section-heading h2 {
+    font-size: 70px;
+  }
+}
