@@ -1,5 +1,6 @@
 {% extends 'base/base_2.html' %}
 
+
   {% load i18n %}
 
   {% load crispy_forms_tags %}
@@ -15,22 +16,65 @@
   {% endblocktrans %} {% endblock page_title %} 
 
   {% block content %}
-  <div class="container">
-    <div class="row mt-5">
-        <div class="col-lg-8 offset-lg-2">
-          <div class="card mx-auto">
-            <div class="card-body">
-              <h5 class="card-title font-weight-normal text-center"> {% blocktrans with page_header|upper as page_header %}
+  {% url 'contact' as contact_url %}
+    <section class="contact-features" id="contact-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 offset-lg-2">
+            <div class="card bg-light">
+              <div class="card-body">
+                <h5 class="card-title font-weight-normal text-center" data-title="{% blocktrans with page_header|upper as page_header %}
+                {{page_header}}{% endblocktrans %}"></h5>
+                <!--h5 class="card-title font-weight-normal text-center"> {% blocktrans with page_header|upper as page_header %}
                   {{page_header}}
-              {% endblocktrans %} </h5>
-              <hr>
-              <form class='contact-form' method='POST' action='{% url "contact" %}'> {% csrf_token %}
-                {{ form|crispy }}
-                <button type='submit' class='btn btn-outline-info float-right'> {% trans "Send Message" %} </button>
-              </form>
+                {% endblocktrans %} </h5-->
+                <form class='contact-form' method='POST' action='{% url "contact" %}'> {% csrf_token %}
+                  {{ form|crispy }}
+                  <button type='submit' class='btn btn-outline-info'> {% if request.path == contact_url %} {% trans "send message" %}  {% else %} 
+                      {% blocktrans with submit_btn|upper as submit_btn %}
+                        {{submit_btn}}
+                      {% endblocktrans %}
+                    {% endif %}  
+                  </button>
+                </form>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
+    </section>
+    <section class="contact-bottom-features" id="contact-bottom-features">
+      <div class="container">
+        <div class="row">
+          <div class="col-md">
+            <div class="card text-center">
+              <div class="card-body">
+                <span><i class="fa fa-map-marker" aria-hidden="true"></i></span>
+                <h5 class="card-title">{% if request.path == contact_url %}{% trans "Our Home" %} {% else %}{% trans "Event Venue" %}{% endif %} </h5>
+                <p>{{street_adress|capfirst}}<br>{{city|capfirst}} {{state|upper}} {{zipcode}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card text-center">
+              <div class="card-body">
+                <span><i class="fa fa-phone" aria-hidden="true"></i></span>
+                <h5 class="card-title">{% if request.path == contact_url %}{% trans "Contact Us" %} {% else %}{% trans "Event Planner" %}{% endif %} </h5>
+                <p>{{phone1}}<br>{{phone2}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md">
+            <div class="card text-center">
+              <div class="card-body">
+                <span><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                <h5 class="card-title">{% if request.path == contact_url %}{% trans "Email Us" %} {% else %}{% trans "Event Email" %}{% endif %} </h5>
+                <p> {{email1}} <br> {{email2}} </p>
+              </div>
+            </div>
+          </div>
         </div>
-    </div>
-  </div>  
+      </div>
+    </section>
+  
   {% endblock %}

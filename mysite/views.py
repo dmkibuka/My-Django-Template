@@ -26,6 +26,14 @@ def contact_page(request):
     context = {
         "page_title":"Contact Us",
         "page_header":" We Love to hear from you",
+        "street_adress": "476 Farmington Ave",
+        "city": "hartford",
+        "state": "ct",
+        "zipcode": "06105",
+        "phone1": "(255) 555-5555",
+        "phone2": "(355) 666-6666",
+        "email1": "joedones@email.com",
+        "email2": "eventpiters@myemail.com",
         "form": contact_form
     }
     if contact_form.is_valid():
