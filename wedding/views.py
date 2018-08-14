@@ -1,5 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView, CreateView
+from django.views.generic import TemplateView, CreateView, ListView, DetailView
 from django.shortcuts import render
 
 from .forms import EventRsvpForm
@@ -16,3 +16,8 @@ class EventRsvpView(CreateView):
 	form_class = EventRsvpForm
 	template_name = 'wedding/rsvp.html'
 
+class WeddingGalleryListView(ListView):
+	pass
+
+class WeddingGalleryDetailView(DetailView):
+	pass

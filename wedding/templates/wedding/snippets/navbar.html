@@ -8,14 +8,27 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
       <ul class="navbar-nav ml-auto">
+        {% url 'home' as home_url %}
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#download">Download</a>
+          <a class="nav-link js-scroll-trigger" href="{{home_url}}">Home</a>
         </li>
+        {% url 'wedding:home' as wedding_url %}
+        {% if not request.path == wedding_url %}
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="{{wedding_url}}">Wedding</a>
+          </li>
+        {% endif %}
+        {% if request.path == wedding_url %}
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#invitation-features">Rsvp</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#gift-features">Gifts</a>
+          </li>
+        {% endif %}
+        {% url 'wedding:list-gallery' as gallery_url %}
         <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#features">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+          <a class="nav-link js-scroll-trigger" href="{{gallery_url}}">Gallery</a>
         </li>
       </ul>
     </div>
