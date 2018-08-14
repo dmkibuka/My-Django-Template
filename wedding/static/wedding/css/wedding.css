@@ -671,3 +671,112 @@ section.gift-features .card:hover {
     font-size: 70px;
   }
 }
+
+
+/******* RSVP Page**********/
+form.contact-form {
+  padding-top: 45%;
+}
+
+form.contact-form .col-form-label {
+  color: #fff;
+}
+
+section.contact-features .card .card-body {
+  background-image: url(/static/wedding/images/rsvp_bg.jpg);
+  background-size: cover;
+  background-position: right center;
+}
+
+section.contact-features .card .card-body .card-title {
+  position: relative;
+}
+
+section.contact-features .card .card-body .card-title::before {
+  content: attr(data-title);
+  position: absolute;
+  display: block;
+  font-size: 1.5rem;
+  font-family: 'Philosopher';
+  text-align: center;
+  background-color: rgba(240, 118, 119, .8);
+  color: #fff;
+  padding: 3rem;
+  width: 100%;
+  top: -1.6rem;
+  left: 0;
+  border: 1px solid #f07677;
+  border-radius: 5px;
+  z-index: 1;
+}
+
+section.contact-bottom-features  {
+  padding-top: 0px;
+  position: relative;
+}
+
+section.contact-bottom-features::after {
+  content: '';
+  position: absolute;
+  background-color: #f07677;
+  width: 100%;
+  height: calc(100% + 150px);
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+section.contact-bottom-features .card {
+  background-color: transparent;
+  color: #fff;
+}
+
+section.contact-bottom-features .card .card-body {
+  border-radius: 5px;
+  border: 1px solid #fff;
+}
+
+section.contact-bottom-features .card i {
+  font-size: 3rem;
+}
+
+section.contact-bottom-features .card .card-title {
+  font-size: 1.5rem;
+  font-family: 'Philosopher';
+}
+
+.btn-outline-info {
+  color: #fff;
+  display: block;
+  border-color: #f07677;
+  background-color: #f07677;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  font-weight: 400;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+.btn-outline-info:hover {
+  color: #000;
+  border: 1px solid #f07677;
+  background-color: transparent;
+}
+
+
+@media (min-width: 768px) {
+  section.contact-features .card .card-body .card-title::before {
+    width: 50%;
+    left: 25%;
+  }
+
+  form.contact-form {
+    padding-top: 15%;
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
