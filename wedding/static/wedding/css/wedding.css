@@ -207,9 +207,11 @@ footer.footerhead .footer-content {
   max-width: footer
   margin-bottom: 100px;
   text-align: center;
+  padding-top: 50px;
 }
 
 footer.footerhead .footer-content h1 {
+  font-family: 'Philosopher';
   font-size: 2.5rem;
   color: #fff;
 }
@@ -219,8 +221,9 @@ footer.footerhead .footer-content h1 i {
 }
 
 footer.footerhead .footer-content h2 {
+  font-family: 'Alex Brush', cursive;
   font-size: 40px;
-  color: #f07677;
+  color: #fff;
 }
 
 .copyright {
@@ -234,24 +237,33 @@ footer.footerhead .footer-content h2 {
   font-size: .7rem;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   footer.footerhead {
     height: 75vh;
     min-height: 150px;
     padding-top: 0;
     padding-bottom: 150px;
-    background-position: center center;
+    background-position: 35% center;
   }
+
   footer.footerhead .footer-content {
     margin-bottom: 0;
     text-align: center;
+    padding-top: 30px;
+    float: right;
   }
+
   footer.footerhead .footer-content h1 {
     font-size: 65px;
     margin-top: 15%;
   }
 }
 
+@media (min-width: 992px) {
+  footer.footerhead .footer-content {
+    padding-top: 0px;
+  }
+} 
 
 /******** Getting Married *******/
 
@@ -335,7 +347,7 @@ section.getmarried-features .card::before{
 
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   section.getmarried-features .card-body .card-title {
   font-size: 3rem;
   }
@@ -462,7 +474,7 @@ section.about-features .about-detail-info p {
   text-align:center;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   section.about-features .section-heading h2 {
     font-size: 70px;
   }
@@ -502,7 +514,7 @@ section.story-features .card-body p {
   text-align: center;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   section.story-features .section-heading h2 {
     font-size: 70px;
   }
@@ -569,7 +581,7 @@ section.bridesmaid-features .row:hover .card img {
   transition: all 2s;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   section.bridesmaid-features .section-heading h2 {
     font-size: 70px;
   }
@@ -626,7 +638,7 @@ section.invitation-features .card-body .btn {
   text-transform: uppercase;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   section.invitation-features .card-body .card-title {
   font-size: 65px;
   }
@@ -666,7 +678,7 @@ section.gift-features .card:hover {
   background-color: #f8f8f8;
 }
 
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   section.gift-features .section-heading h2 {
     font-size: 70px;
   }
