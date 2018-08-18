@@ -1,18 +1,22 @@
 {% extends 'base/base_wedding.html' %}
-
   {% load i18n %}
 
   {% load crispy_forms_tags %}
 
   {% block extrahead %}
     {% load  static %}
-
-    <!-- Wedding CSS -->
-    <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/wedding.css" %} "> 
-
-    <!-- Fonts CSS -->
-    <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/fonts.css" %} "> 
-
+    
+    {% url 'wedding:rsvp' as rsvp_url %}
+    {% if request.path == rsvp_url %}
+      <!-- Wedding CSS -->
+      <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/wedding.css" %} "> 
+      <!-- Fonts CSS -->
+      <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/fonts.css" %} "> 
+    {% else %} 
+      <!-- Main Project CSS -->
+      <link rel="stylesheet" type="text/css" href=" {% static "css/base.css" %} "> 
+    {% endif %}
+    
   {% endblock extrahead %}
 
   {% block page_title %} 
