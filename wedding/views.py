@@ -4,6 +4,8 @@ from django.shortcuts import render
 
 from .forms import EventRsvpForm
 
+from .models import WeddingPicture
+
 # Create your views here.
 
 
@@ -17,7 +19,8 @@ class EventRsvpView(CreateView):
 	template_name = 'wedding/rsvp.html'
 
 class WeddingGalleryListView(ListView):
-	pass
+	model = WeddingPicture
+	template_name='wedding/gallery-list.html'
 
 class WeddingGalleryDetailView(DetailView):
 	pass

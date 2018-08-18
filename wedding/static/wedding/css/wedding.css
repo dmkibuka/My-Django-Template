@@ -198,6 +198,7 @@ footer.footerhead {
   padding-bottom: 100px; 
   color: white;
   float: left;
+  background-image: url(/static/wedding/images/footer_bg.jpg);
   background-position: 25% 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -265,11 +266,56 @@ footer.footerhead .footer-content h2 {
   }
 } 
 
+
+/******Section Shared CSS*******/
+
+.section-heading h2 {
+  font-family: 'Alex Brush', cursive;
+  line-height: 1.1;
+  font-weight: 400;
+  color: #f8f8f8;
+  text-align: center;
+  text-transform: capitalize;
+  display: block;
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+}
+
+.card-title h3 {
+  font-size: 2rem;
+  color: #f07677;
+  text-align: center;
+}
+
+.btn-outline-warning {
+  color: #f07677;
+  border-color: #f07677;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-outline-warning:hover {
+  color: #f6f6f6;
+  border-color: #f07677;
+  background-color: #f07677;
+}
+
+@media (min-width: 768px) {
+  .section-heading h2 {
+    font-size: 5rem;
+  }
+
+  .card-title h3 {
+    font-size: 3rem;
+  }
+}
+
 /******** Getting Married *******/
 
 section.getmarried-features {
   float:left;
   width:100%;
+  background-image: url(/static/wedding/images/married.jpg);
   background-size:cover;
   background-position:50% 50%;
   background-repeat:no-repeat;
@@ -284,25 +330,19 @@ section.getmarried-features .card {
   text-align: center;
 }
 
-section.getmarried-features .card-body .card-title {
-  color: #f8f8f8;
-  font-size: 2rem;
-}
-
-section.getmarried-features .card-body .card-subtitle {
+section.getmarried-features .card-body .card-title h3 {
   font-family: 'Philosopher';
   color: #f8f8f8;
-  font-size: 2rem;
 }
 
-section.getmarried-features .card-body .card-subtitle i:first-child {
+section.getmarried-features .card-body .card-title i:first-child {
   -ms-transform: rotate(-40deg); /* IE 9 */
   -webkit-transform: rotate(-40deg); /* Safari 3-8 */
   transform: rotate(-40deg);
   color: #f07677
 }
 
-section.getmarried-features .card-body .card-subtitle i:last-child {
+section.getmarried-features .card-body .card-title i:last-child {
   -ms-transform: rotate(40deg); /* IE 9 */
   -webkit-transform: rotate(40deg); /* Safari 3-8 */
   transform: rotate(40deg);
@@ -315,22 +355,14 @@ section.getmarried-features .card-body .card-text img {
   transform: rotate(180deg);
 }
 
-section.getmarried-features .card-body .btn-outline-warning {
-  color: #fff;
-  border-color: #f07677;
-}
-
-section.getmarried-features .card-body .btn-outline-warning:hover {
-  color: #fff;
-  border-color: #f07677;
-  background-color: #f07677;
-}
-
-section.getmarried-features .card-body .btn {
+section.getmarried-features .card-body .btn-outline-warning.disabled {
   font-family: 'Philosopher';
   font-weight: 400;
-  font-size: 1rem;
-  text-transform: uppercase;
+  color: #f07677;
+}
+
+section.getmarried-features .card-body .btn-outline-warning.disabled:hover {
+  color: #f6f6f6;
 }
 
 section.getmarried-features .card::before{
@@ -348,16 +380,8 @@ section.getmarried-features .card::before{
 }
 
 @media (min-width: 768px) {
-  section.getmarried-features .card-body .card-title {
-  font-size: 3rem;
-  }
-
-  section.getmarried-features .card-body .btn {
+  section.getmarried-features .card-body .btn-outline-warning.disabled {
     font-size: 2rem;
-  }
-
-  section.getmarried-features .card-body .card-subtitle {
-  font-size: 3rem;
   }
 }
 
@@ -365,25 +389,7 @@ section.getmarried-features .card::before{
 /***** About Groom and Bride*****/
 
 section.about-features .section-heading h2 {
-  font-family: 'Alex Brush', cursive;
-  line-height: 1.1;
-  font-weight: 400;
   color: #222222;
-  text-align: center;
-  text-transform: capitalize;
-  display: block;
-  font-size: 2.5rem;
-}
-
-section.about-features .title-block {
-  display: block;
-  text-transform: capitalize;
-  line-height: 1.1;
-  font-weight: 400;
-  color: #222222;
-  font-family: 'Philosopher';
-  margin-top: 1rem;
-  font-size: 1.5rem;
 }
 
 section.about-features .about-detail-info h2 {
@@ -474,29 +480,20 @@ section.about-features .about-detail-info p {
   text-align:center;
 }
 
-@media (min-width: 768px) {
-  section.about-features .section-heading h2 {
-    font-size: 70px;
-  }
-}
 
 /******* Our Love Story********/
-
-section.story-features .section-heading h2 {
-  font-family: 'Alex Brush', cursive;
-  line-height: 1.1;
-  font-weight: 400;
-  color: #f8f8f8;
-  text-align: center;
-  text-transform: capitalize;
-  display: block;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
-}
 
 section.story-features .card-body .card-title {
   color: #f07677;
   text-align: center;
+}
+
+section.story-features .row {
+  margin-top: 1.2rem;
+}
+
+section.story-features .row:first-child {
+  margin-top: 0;
 }
 
 section.story-features .card-body h6 {
@@ -515,12 +512,8 @@ section.story-features .card-body p {
 }
 
 @media (min-width: 768px) {
-  section.story-features .section-heading h2 {
-    font-size: 70px;
-  }
-
-  section.story-features .card-body .card-title {
-  font-size: 45px;
+  section.story-features .row {
+    margin-top: 3rem;
   }
 }
 
@@ -529,20 +522,11 @@ section.story-features .card-body p {
 
 
 section.bridesmaid-features .section-heading h2 {
-  font-family: 'Alex Brush', cursive;
-  line-height: 1.1;
-  font-weight: 400;
   color: #222222;
-  text-align: center;
-  text-transform: capitalize;
-  display: block;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
 }
 
-section.bridesmaid-features .card-body .card-title {
-  color: #f07677;
-  text-align: center;
+section.bridesmaid-features .card-body .card-title h3 {
+  color: #222222;
 }
 
 section.bridesmaid-features .card-body h6 {
@@ -558,6 +542,14 @@ section.bridesmaid-features .card-body h4 {
 
 section.bridesmaid-features .card-body p {
   text-align: center;
+}
+
+section.bridesmaid-features .row {
+  margin-top: 1.2rem;
+}
+
+section.bridesmaid-features .row:first-child {
+  margin-top: 0;
 }
 
 section.bridesmaid-features .card img {
@@ -582,21 +574,17 @@ section.bridesmaid-features .row:hover .card img {
 }
 
 @media (min-width: 768px) {
-  section.bridesmaid-features .section-heading h2 {
-    font-size: 70px;
-  }
-
-  section.bridesmaid-features .card-body .card-title {
-  font-size: 45px;
+  section.bridesmaid-features .row {
+    margin-top: 3rem;
   }
 }
-
 
 /******** Invitation and Event *******/
 
 section.invitation-features {
   float:left;
   width:100%;
+  background-image: url(/static/wedding/images/event_bg.jpg);
   background-size:cover;
   background-position:50% 50%;
   background-repeat:no-repeat;
@@ -611,184 +599,76 @@ section.invitation-features .card {
   text-align: center;
 }
 
-section.invitation-features .card-body .card-title {
-  color: #fff;
-}
-
-section.invitation-features .card-body .card-subtitle {
+section.invitation-features .card-body .card-title h3 {
   font-family: 'Philosopher';
-  color: #f07677;
-  font-size: 2rem;
 }
 
 section.invitation-features .card-body .btn-outline-warning {
-  color: #fff;
-  border-color: #f07677;
-}
-
-section.invitation-features .card-body .btn-outline-warning:hover {
-  color: #fff;
-  border-color: #f07677;
-  background-color: #f07677;
-}
-
-section.invitation-features .card-body .btn {
   font-weight: 400;
   font-size: 2rem;
   text-transform: uppercase;
-}
-
-@media (min-width: 768px) {
-  section.invitation-features .card-body .card-title {
-  font-size: 65px;
-  }
 }
 
 
 /******** Gift Registrations*************/
 
-section.gift-features .section-heading h2 {
-  font-family: 'Alex Brush', cursive;
-  line-height: 1.1;
-  font-weight: 400;
-  color: #f8f8f8;
-  text-align: center;
-  text-transform: capitalize;
-  display: block;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
+section.gift-features .btn-outline-warning {
+  border-color: #f6f6f6;
 }
 
-section.gift-features .card-body .card-title {
-  font-family: 'Philosopher';
-  color: #f8f8f8;
-  font-size: 2rem;
-  text-align: center;
+section.gift-features .btn-outline-warning {
+  position: relative;
 }
 
-section.gift-features .card-body .card-title:hover {
-  color: #f07677;
-}
-
-section.gift-features .card {
-  background-color: #f07677;
-}
-
-section.gift-features .card:hover {
-  background-color: #f8f8f8;
-}
-
-@media (min-width: 768px) {
-  section.gift-features .section-heading h2 {
-    font-size: 70px;
-  }
+section.gift-features .btn-outline-warning::before {
+  font-family: FontAwesome;
+  content: "\f06b";
+  position: absolute;
+  display: inline-block;
+  color: #f6f6f6;
+  top: 10px;
+  left: 5px;
+  font-size: 1rem;
 }
 
 
 /******* RSVP Page**********/
-form.contact-form {
-  padding-top: 45%;
-}
 
-form.contact-form .col-form-label {
-  color: #fff;
-}
-
-section.contact-features .card .card-body {
+section.rsvp-features {
   background-image: url(/static/wedding/images/rsvp_bg.jpg);
   background-size: cover;
   background-position: right center;
 }
 
-section.contact-features .card .card-body .card-title {
-  position: relative;
+section.rsvp-features .card {
+  background-color: rgba(0,0,0,.6);
 }
 
-section.contact-features .card .card-body .card-title::before {
-  content: attr(data-title);
-  position: absolute;
-  display: block;
-  font-size: 1.5rem;
-  font-family: 'Philosopher';
-  text-align: center;
-  background-color: rgba(240, 118, 119, .8);
-  color: #fff;
-  padding: 3rem;
-  width: 100%;
-  top: -1.6rem;
-  left: 0;
-  border: 1px solid #f07677;
-  border-radius: 5px;
-  z-index: 1;
-}
-
-section.contact-bottom-features  {
-  padding-top: 0px;
-  position: relative;
-}
-
-section.contact-bottom-features::after {
-  content: '';
-  position: absolute;
-  background-color: #f07677;
-  width: 100%;
-  height: calc(100% + 150px);
-  left: 0;
-  bottom: 0;
-  z-index: -1;
-}
-
-section.contact-bottom-features .card {
-  background-color: transparent;
-  color: #fff;
-}
-
-section.contact-bottom-features .card .card-body {
-  border-radius: 5px;
-  border: 1px solid #fff;
-}
-
-section.contact-bottom-features .card i {
-  font-size: 3rem;
-}
-
-section.contact-bottom-features .card .card-title {
-  font-size: 1.5rem;
+section.rsvp-features .section-heading h2 {
   font-family: 'Philosopher';
 }
 
-.btn-outline-info {
-  color: #fff;
-  display: block;
-  border-color: #f07677;
-  background-color: #f07677;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
+section.rsvp-features .card .card-title h3 {
+  font-family: 'Philosopher';
 }
 
-.btn {
-  font-weight: 400;
-  font-size: 1.1rem;
-  text-transform: uppercase;
+section.rsvp-features-events .col-md {
+  margin-bottom: 1rem;
 }
 
-.btn-outline-info:hover {
-  color: #000;
-  border: 1px solid #f07677;
-  background-color: transparent;
+section.rsvp-features-events .col-md:last-child {
+  margin-bottom: 0px;
 }
-
 
 @media (min-width: 768px) {
-  section.contact-features .card .card-body .card-title::before {
-    width: 50%;
-    left: 25%;
-  }
-
-  form.contact-form {
-    padding-top: 15%;
-    padding-left: 10%;
-    padding-right: 10%;
+  section.rsvp-features-events .col-md {
+    margin-bottom: 0px;
   }
 }
+
+/********Gallery*******/
+
+section.gallery-list-features .section-heading h2 {
+  color: #222222;
+}
+

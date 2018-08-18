@@ -9,6 +9,6 @@ urlpatterns = [
 	path('', WeddingHomeView.as_view(), name='home'),
 	path('rsvp/', EventRsvpView.as_view(), name='rsvp'),
 	path('gallery/', WeddingGalleryListView.as_view(), name='list-gallery'),
-	path('gallery/', WeddingGalleryDetailView.as_view(), name='detail-gallery'),
+	path('gallery/detail', WeddingGalleryDetailView.as_view(), name='detail-gallery'),
 
 ]

@@ -1,0 +1,136 @@
+{% extends "base/base_wedding.html" %}
+
+  {% load i18n %}
+
+  {% load crispy_forms_tags %}
+
+  {% block extrahead %}
+    {% load  static %}
+    <!-- Animate CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"> 
+  
+    <!-- OwlCarousel2 CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"> 
+  
+    <!-- OwlCarousel2 Theme CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"> 
+    
+    <!-- Magnific-Popup CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"> 
+    
+    <!-- Fonts CSS -->
+    <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/fonts.css" %} "> 
+    
+    <!-- Wedding CSS -->
+    <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/wedding.css" %} "> 
+
+    
+  {% endblock extrahead %}
+
+  {% block page_title %} {% blocktrans with page_title|default:"wedding gallery"|title as page_title %}
+      {{page_title}}
+  {% endblocktrans %} {% endblock page_title %} 
+
+  {% block content %}
+    <section class="gallery-list-features bg-light" id="gallery-list-features">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Wedding Gallery<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h2>
+        </div>
+        <!-- Project One -->
+        <div class="row">
+          <div class="col-lg-7">
+            <a href="#">
+              <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'wedding/images/engage.jpg' %}" alt="">
+            </a>
+          </div>
+          <div class="col-lg-5 card-title">
+            <h3>
+              {% blocktrans with gallery_one|default:"engagement pictures"|title as gallery_one %}
+                {{gallery_one}}
+              {% endblocktrans %}
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+            <a class="btn btn-outline-warning" href="#">
+              {% blocktrans with gallery_one_btn|default:"view selection"|title as gallery_one_btn %}
+                {{gallery_one_btn}}
+              {% endblocktrans %}
+            </a>
+          </div>
+        </div>
+        <hr>
+        <!-- /.row -->
+        <!-- Project One -->
+        <div class="row">
+          <div class="col-lg-7 order-lg-2">
+            <a href="#">
+              <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'wedding/images/bach_party.jpg' %}" alt="Bachelorette Party">
+            </a>
+          </div>
+          <div class="col-lg-5 order-lg-1 card-title">
+            <h3>
+              {% blocktrans with gallery_two|default:"bachelorette party"|title as gallery_two %}
+                {{gallery_two}}
+              {% endblocktrans %}
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+            <a class="btn btn-outline-warning" href="#">
+              {% blocktrans with gallery_two_btn|default:"view selection"|title as gallery_two_btn %}
+                {{gallery_two_btn}}
+              {% endblocktrans %}
+            </a>
+          </div>
+        </div>
+        <hr>
+        <!-- /.row -->
+        <!-- Project One -->
+        <div class="row">
+          <div class="col-lg-7">
+            <a href="#">
+              <img class="img-fluid rounded mb-3 mb-md-0" src="{% static 'wedding/images/church.jpg' %}" alt="">
+            </a>
+          </div>
+          <div class="col-lg-5 card-title">
+            <h3>
+              {% blocktrans with gallery_three|default:"wedding church"|title as gallery_three %}
+                {{gallery_three}}
+              {% endblocktrans %}
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+            <a class="btn btn-outline-warning" href="#">
+              {% blocktrans with gallery_three_btn|default:"view selection"|title as gallery_three_btn %}
+                {{gallery_three_btn}}
+              {% endblocktrans %}
+            </a>
+          </div>
+        </div>
+        <hr>
+        <!-- /.row -->
+        <!-- Project One -->
+        <div class="row">
+          <div class="col-lg-7 order-lg-2">
+            <a href="#">
+              <img class="img-fluid rounded mb-3 mb-md-0" src=" {% static 'wedding/images/recep_gallery.jpg' %} " alt="">
+              <!--images 700x300-->
+            </a>
+          </div>
+          <div class="col-lg-5 order-lg-1 card-title">
+            <h3>
+              {% blocktrans with gallery_four|default:"wedding reception"|title as gallery_four %}
+                {{gallery_four}}
+              {% endblocktrans %}
+            </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
+            <a class="btn btn-outline-warning" href="#">
+              {% blocktrans with gallery_four_btn|default:"view selection"|title as gallery_four_btn %}
+                {{gallery_four_btn}}
+              {% endblocktrans %}
+            </a>
+          </div>
+        </div>
+        <hr>
+        <!-- /.row -->
+      </div>
+    </section>
+  {% endblock %}
+

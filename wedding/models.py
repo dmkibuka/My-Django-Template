@@ -32,3 +32,13 @@ class EventRsvp(models.Model):
 
 	def __str__(self):
 	    return self.user.full_name
+
+
+class WeddingPicture(models.Model):
+
+    class Meta:
+        verbose_name = "Wedding Picture"
+        verbose_name_plural = "Wedding Pictures"
+
+    def __str__(self):
+        pass

@@ -5,18 +5,7 @@
 	{% load crispy_forms_tags %}
 
 	{% block extrahead %}
-		{% load  static %}
-		<!-- Animate CSS -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"> 
-	
-		<!-- OwlCarousel2 CSS -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css"> 
-	
-		<!-- OwlCarousel2 Theme CSS -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css"> 
-		
-		<!-- Magnific-Popup CSS -->
-		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css"> 
+		{% load  static %} 
 		
 		<!-- Fonts CSS -->
 		<link rel="stylesheet" type="text/css" href=" {% static "wedding/css/fonts.css" %} "> 
@@ -27,18 +16,24 @@
 		
 	{% endblock extrahead %}
 
-	{% block page_title %}{% trans "David & Allen" %}{% endblock page_title %} 
+	{% block page_title %} {% blocktrans with page_title|default:"our wedding"|title as page_title %}
+      {{page_title}}
+  	{% endblocktrans %} {% endblock page_title %} 
 
 	{% block content %}
-		<section class="getmarried-features mb-5" id="getmarried-features" style="background-image: url({% static 'wedding/images/married.jpg' %})">
+		<section class="getmarried-features mb-5" id="getmarried-features">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<div class="card">
 							<div class="card-body">
-								<h1 class="card-title">we gettin' married<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h1>
+								<div class="section-heading">
+									<h2>we gettin' married<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h2>
+								</div>
 								<hr class="light mb-3">
-								<h2 class="card-subtitle my-auto">David  <i class="fa fa-heart"></i><i class="fa fa-heart"></i>  Allen</h2>
+								<div class="card-title">
+									<h3 class="my-auto">David  <i class="fa fa-heart"></i><i class="fa fa-heart"></i>  Allen</h3>
+								</div>
 								<hr class="light mb-4">
 								<p class="card-text"><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></p>
 								<h1 class="btn btn-outline-warning btn-lg disabled btn-block">Save The Date<br>20 December 2018</h1>
@@ -62,8 +57,8 @@
 						</div>
 					</div>
 					<div class="col-lg-8 my-auto">
-						<div class="about-detail-info">
-							<span class="title-block text-center">About The Groom</span>
+						<div class="about-detail-info card-title">
+							<h3 class="text-center">About The Groom</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
 							<h2>David</h2>
 							<ul class="list-inline">
@@ -75,16 +70,16 @@
 					</div>
 				</div>
 				<div class="row mt-5">
-					<div class="col-md-4 order-md-8 my-auto">
+					<div class="col-lg-4 order-lg-2 my-auto">
 						<div class="about-detail">
 							<div class="about-detail_img text-center">
 								<img src=" {% static 'wedding/images/bride.png' %} " class="img-fluid rounded-circle" alt="The Groom">
 							</div>
 						</div>
 					</div>
-					<div class="col-md-8 order-md-4 my-auto">
-						<div class="about-detail-info">
-							<span class="title-block text-center">About The Bride</span>
+					<div class="col-lg-8 order-lg-1 my-auto">
+						<div class="about-detail-info card-title">
+							<h3 class="text-center">About The Bride</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
 							<h2>Allen</h2>
 							<ul class="list-inline">
@@ -101,7 +96,6 @@
 			<div class="container">
 				<div class="section-heading">
 					<h2>Our true love story<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h2>
-
 				</div>
 				<div class="row">
 					<div class="col-md-4">
@@ -112,7 +106,9 @@
 					<div class="col-md-8">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title"><i class="fa fa-heart"></i> how we met <i class="fa fa-heart"></i></h3>
+								<div class="card-title">
+									<h3><i class="fa fa-heart"></i> how we met <i class="fa fa-heart"></i></h3>
+								</div>
 								<h6>20 December 2017</h6>
 								<h4>That day changed Life</h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -120,16 +116,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mt-5">
-					<div class="col-md-4 order-md-8">
+				<div class="row">
+					<div class="col-md-4 order-md-2">
 						<div class="card">
 							<img src=" {% static 'wedding/images/story_2.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
 						</div>
 					</div>
-					<div class="col-md-8 order-md-4">
+					<div class="col-md-8 order-md-1">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title"><i class="fa fa-heart"></i> our first date <i class="fa fa-heart"></i></h3>
+								<div class="card-title">
+								<h3><i class="fa fa-heart"></i> our first date <i class="fa fa-heart"></i></h3>
+								</div>
 								<h6>20 December 2018</h6>
 								<h4>Our Best Dinner Ever</h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -137,7 +135,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mt-5">
+				<div class="row">
 					<div class="col-md-4">
 						<div class="card">
 							<img src=" {% static 'wedding/images/story_3.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
@@ -146,7 +144,9 @@
 					<div class="col-md-8">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title"><i class="fa fa-heart"></i> how he proposed <i class="fa fa-heart"></i></h3>
+								<div class="card-title">
+									<h3><i class="fa fa-heart"></i> how he proposed <i class="fa fa-heart"></i></h3>
+								</div>
 								<h6>20 December 2018</h6>
 								<h4>That was so wonderful</h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -154,16 +154,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mt-5">
-					<div class="col-md-4 order-md-8">
+				<div class="row">
+					<div class="col-md-4 order-md-2">
 						<div class="card">
 							<img src=" {% static 'wedding/images/story_4.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
 						</div>
 					</div>
-					<div class="col-md-8 order-md-4">
+					<div class="col-md-8 order-md-1">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title"><i class="fa fa-heart"></i> our first kiss <i class="fa fa-heart"></i></h3>
+								<div class="card-title">
+									<h3><i class="fa fa-heart"></i> our first kiss <i class="fa fa-heart"></i></h3>
+								</div>
 								<h6>20 December 2019</h6>
 								<h4>Feeling Awesome </h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -171,7 +173,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mt-5">
+				<div class="row">
 					<div class="col-md-4">
 						<div class="card">
 							<img src=" {% static 'wedding/images/story_5.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
@@ -180,7 +182,9 @@
 					<div class="col-md-8">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title"><i class="fa fa-heart"></i> now we together <i class="fa fa-heart"></i></h3>
+								<div class="card-title">
+									<h3><i class="fa fa-heart"></i> now we together <i class="fa fa-heart"></i></h3>
+								</div>
 								<h6>20 December 2019</h6>
 								<h4>We're waiting for the best</h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -190,15 +194,19 @@
 				</div>
 			</div>
 		</section>
-		<section class="invitation-features mb-5" id="invitation-features" style="background-image: url({% static 'wedding/images/event_bg.jpg' %})">
+		<section class="invitation-features mb-5" id="invitation-features">
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 offset-md-2">
 						<div class="card">
 							<div class="card-body">
-								<h1 class="card-title">Wedding Invitation</h1>
+								<div class="section-heading">
+									<h2>Wedding Invitation</h2>
+								</div>
 								<hr class="light mb-3">
-								<h2 class="card-subtitle my-auto">20 December 2018 <br> time: 7:30pm</h2>
+								<div class="card-title">
+									<h3 class="my-auto">20 December 2018 <br> time: 7:30pm</h3>
+								</div>
 								<hr class="light mb-3">
 								<p class="card-text">Agape Word Center Church <br> Beltsville, Maryland 20705</p>
 								<a href=" {% url 'wedding:rsvp' %} " class="btn btn-outline-warning btn-lg">RSVP</a>
@@ -212,7 +220,6 @@
 			<div class="container">
 				<div class="section-heading">
 					<h2>Groomsmen &amp; Bridesmaid<br><img src=" {% static 'wedding/images/heading.png' %} " class="img-fluid" alt="Heading"></h2>
-
 				</div>
 				<div class="row">
 					<div class="col-md-4">
@@ -223,7 +230,9 @@
 					<div class="col-md-8">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title">Peter Walters</h3>
+								<div class="card-title">
+									<h3>Peter Walters</h3>
+								</div>
 								<!--h6>20 December 2017</h6-->
 								<h4>A word of wisdom</h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -231,16 +240,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mt-5">
-					<div class="col-md-4 order-md-8">
+				<div class="row">
+					<div class="col-md-4 order-md-2">
 						<div class="card">
 							<img src=" {% static 'wedding/images/maids_2.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
 						</div>
 					</div>
-					<div class="col-md-8 order-md-4">
+					<div class="col-md-8 order-md-1">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title">joyce kiyemba</i></h3>
+								<div class="card-title">
+									<h3>joyce kiyemba</h3>
+								</div>
 								<!--h6>20 December 2017</h6-->
 								<h4>A word of wisdom</h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -248,7 +259,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mt-5">
+				<div class="row">
 					<div class="col-md-4">
 						<div class="card">
 							<img src=" {% static 'wedding/images/maids_3.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
@@ -257,7 +268,9 @@
 					<div class="col-md-8">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title">David Smith</h3>
+								<div class="card-title">
+									<h3>David Smith</h3>
+								</div>
 								<!--h6>20 December 2017</h6-->
 								<h4>A word of wisdom</h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -265,16 +278,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="row mt-5">
-					<div class="col-md-4 order-md-8">
+				<div class="row">
+					<div class="col-md-4 order-md-2">
 						<div class="card">
 							<img src=" {% static 'wedding/images/maids_4.jpg' %} " class="img-fluid rounded card-img-top" alt="The Groom">
 						</div>
 					</div>
-					<div class="col-md-8 order-md-4">
+					<div class="col-md-8 order-md-1">
 						<div class="card">
 							<div class="card-body">
-								<h3 class="card-title">Juliet Babirye</h3>
+								<div class="card-title">
+									<h3>Juliet Babirye</h3>
+								</div>
 								<!--h6>20 December 2017</h6-->
 								<h4>A word of wisdom</h4>
 								<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, vel. Odio, ex ut veritatis reprehenderit in facilis nobis! Ratione eos sint eligendi exercitationem consequatur, distinctio molestias minima, assumenda nulla autem !</p>
@@ -293,46 +308,22 @@
 
 				<div class="row">
 					<div class="col-sm-6 col-md-4 mb-2">
-						<div class="card">
-							<div class="card-body">
-								<h3 class="card-title">Macy's</h3>
-							</div>
-						</div>
+						<a type="btn" class="btn btn-outline-warning btn-lg btn-block" href="#">Macy's</a>
 					</div>
 					<div class="col-sm-6 col-md-4 mb-2">
-						<div class="card">
-							<div class="card-body">
-								<h3 class="card-title">David's</h3>
-							</div>
-						</div>
+						<a type="btn" class="btn btn-outline-warning btn-lg btn-block" href="#">David's Bridal</a>
 					</div>
 					<div class="col-sm-6 col-md-4 mb-2">
-						<div class="card">
-							<div class="card-body">
-								<h3 class="card-title">Bed &amp; bath</h3>
-							</div>
-						</div>
+						<a type="btn" class="btn btn-outline-warning btn-lg btn-block" href="#">JcPenny</a>
 					</div>
 					<div class="col-sm-6 col-md-4 mb-2">
-						<div class="card">
-							<div class="card-body">
-								<h3 class="card-title">JCpenny</h3>
-							</div>
-						</div>
+						<a type="btn" class="btn btn-outline-warning btn-lg btn-block" href="#">Mens Warehouse</a>
 					</div>
 					<div class="col-sm-6 col-md-4 mb-2">
-						<div class="card">
-							<div class="card-body">
-								<h3 class="card-title">Costco</h3>
-							</div>
-						</div>
+						<a type="btn" class="btn btn-outline-warning btn-lg btn-block" href="#">Victoria Secret's</a>
 					</div>
 					<div class="col-sm-6 col-md-4 mb-2">
-						<div class="card">
-							<div class="card-body">
-								<h3 class="card-title">Geico</h3>
-							</div>
-						</div>
+						<a type="btn" class="btn btn-outline-warning btn-lg btn-block" href="#">Geico Ins</a>
 					</div>
 				</div>
 			</div>
