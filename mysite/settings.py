@@ -73,10 +73,10 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'mysite.urls'
-LOGIN_URL = '/login/'
+LOGIN_URL = 'accounts/login/'
 LOGIN_URL_REDIRECT = '/'
-LOGOUT_URL = '/logout/'
-LOGOUT_REDIRECT_URL = '/login/'
+LOGOUT_URL = 'accounts/logout/'
+LOGOUT_REDIRECT_URL = 'accounts/login/'
 MANAGERS = (
     ('David Kibuka-Musoke', "visarget@gmail.com"),
 )
