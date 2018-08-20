@@ -1,33 +1,14 @@
-/*
- * Globals
- */
 
-/* Links */
-a,
-a:focus,
-a:hover {
-  color: #fff;
-}
-
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-  background-color: #fff;
-  border: .05rem solid #fff;
-}
-
-
-/*
- * Base structure
- */
+/** Base structure */
 
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-image: url(/static/images/adult_1.jpg);
+  background-size: cover;
+  background-repeat: none;
+  background-position: 50% 100%;
+  /*background-color: #333;*/
 }
 
 body {
@@ -42,10 +23,13 @@ body {
   max-width: 42em;
 }
 
+@media (min-width: 992px) {
+  body {
+    background-position: initial;
+  }
+}
 
-/*
- * Header
- */
+/** Header **/
 .masthead {
   margin-bottom: 2rem;
 }
@@ -86,9 +70,11 @@ body {
 }
 
 
-/*
- * Cover
- */
+/** Cover **/
+
+.cover-text-section {
+  display: none;
+}
 .cover {
   padding: 0 1.5rem;
 }
@@ -97,10 +83,13 @@ body {
   font-weight: 700;
 }
 
+@media (min-width: 768px) {
+  .cover-text-section {
+    display: block;
+  }
+}
 
-/*
- * Footer
- */
+/** Footer **/
 .mastfoot {
   color: rgba(255, 255, 255, .5);
 }

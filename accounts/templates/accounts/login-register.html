@@ -1,0 +1,94 @@
+{% extends 'base/base_2.html' %}
+
+	{% url 'accounts:login' as login_url %}
+    {% url 'accounts:register' as register_url %}
+
+	{% load i18n %}
+
+	{% load crispy_forms_tags %}
+
+	{% block extrahead %}
+		{% load  static %}
+		<!-- Signin CSS -->
+		<link rel="stylesheet" type="text/css" href=" {% static "css/signin.css" %} "> 
+	{% endblock extrahead %}
+
+  	{% block page_title %}
+  		{% if request.path == login_url  %}
+  			{% blocktrans with page_title|default:"sign-In"|title as page_title %}
+      			{{page_title}}
+    		{% endblocktrans %} 
+  		{% elif request.path == register_url  %} 
+  			{% blocktrans with page_title|default:"sign-Up"|title as page_title %}
+      			{{page_title}}
+    		{% endblocktrans %} 	
+  		{% endif %} 
+  	{% endblock page_title %} 
+
+  	{% block content %}
+    	{% url 'accounts:login' as login_url %}
+    	{% url 'accounts:register' as register_url %}
+		<section class="login-register-features" id="login-register-features">
+			<div class="container">
+				<!--div class="section-heading">
+					<h2>
+					{% if request.path == contact_url  %}
+						{% blocktrans with section_hdg_title|default:'contact us'|upper as section_hdg_title %}
+							{{section_hdg_title}}
+						{% endblocktrans %}
+					{% else %}
+						{% blocktrans with section_hdg_title|default:'share with us'|upper as section_hdg_title %}
+							{{section_hdg_title}}
+						{% endblocktrans %}
+					{% endif %}
+					</h2>
+				</div-->
+				<div class="row">
+					<div class="col-lg-4 offset-lg-8">
+						<div class="card card-top bg-light">
+							<div class="card-body">
+								<div class="card-title card-title-top">
+									<h3 data-title="
+										{% if request.path == login_url  %}
+											{% blocktrans with login_title|default:'login'|upper as login_title %}
+												{{login_title}}
+											{% endblocktrans %}
+										{% else %}
+											{% blocktrans with register_title|default:'please register'|upper as register_title %}
+												{{register_title}}
+											{% endblocktrans %}
+										{% endif %}">
+									</h3>
+								</div>
+								<form method="POST">
+									{% csrf_token %}
+									{{ form|crispy }}
+									<button type='submit' class='btn btn-outline-warning'>
+									{% if request.path == login_url %}
+										{% blocktrans with submit_btn|default:"sign in"|title as submit_btn %}
+											{{submit_btn}}
+										{% endblocktrans %}
+									{% elif request.path == register_url %}
+										{% blocktrans with submit_btn|default:"register"|title as submit_btn %}
+											{{submit_btn}}
+										{% endblocktrans %}
+									{% endif %}
+									</button>
+								</form>
+								{% if request.path == login_url  %}
+									<p>{% trans "Forgot Password" %}? <a href=" {% url 'password:password_reset' %} " class="card-link">{% trans "Reset" %}</a>!</p>
+									<p>{% trans "Not Member" %}? <a href=" {{register_url}} " class="card-link">{% trans "Register" %}</a>!</p>
+								{% elif request.path == register_url  %}
+									<p>{% trans "Already a Member" %}? <a href=" {{login_url}} " class="card-link">{% trans "Sign In" %}</a>!</p>
+								{% endif %}
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+  	{% endblock %}
+
+
+
+	

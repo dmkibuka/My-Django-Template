@@ -84,7 +84,7 @@ class GuestRegisterView(NextUrlMixin, RequestFormAttachMixin, CreateView):
 class LoginView(NextUrlMixin, RequestFormAttachMixin, FormView):
     form_class = LoginForm
     success_url = '/'
-    template_name = 'accounts/login.html'
+    template_name = 'accounts/login-register.html'
 
     def form_valid(self, form):
         next_path = self.get_next_url()
@@ -93,7 +93,7 @@ class LoginView(NextUrlMixin, RequestFormAttachMixin, FormView):
 
 class RegisterView(CreateView):
     form_class = RegisterForm
-    template_name = 'accounts/register.html'
+    template_name = 'accounts/login-register.html'
     success_url = '/accounts/login/'
 
 

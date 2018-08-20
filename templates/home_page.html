@@ -29,17 +29,19 @@
 	{% endblock navbar %}
 
 	{% block content %}
-		<main role="main" class="inner cover">
-      <h1 class="cover-heading"> 
+    <main role="main" class="inner cover">
+      <div class="cover-text-section">
+        <h1 class="cover-heading">
         {% blocktrans with page_header|title as page_header %}
-          {{page_header}} 
-        {% endblocktrans %} 
-      </h1>
-      <p class="lead"> 
-        {% blocktrans with cover_intro|capfirst as cover_intro %}
-          {{cover_intro}} 
-        {% endblocktrans %} 
-      </p>
+          {{page_header}}
+        {% endblocktrans %}
+        </h1>
+        <p class="lead">
+          {% blocktrans with cover_intro|capfirst as cover_intro %}
+            {{cover_intro}}
+          {% endblocktrans %}
+        </p>
+      </div>
       <p class="lead">
         {% url 'accounts:login' as login_url %}
         <a href="{{ login_url }}" class="btn btn-outline-success btn-lg">Log In</a>

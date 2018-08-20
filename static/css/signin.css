@@ -5,118 +5,146 @@ body {
 
 body {
   background-color: #333;
-  color: #08737f;
-  padding-top: 40px;
-}
-
-.card {
-  background-color: rgba(246, 243, 243, 0.75);
+  /*margin-top: 3rem;*/
 }
 
 section {
 	padding: 50px 0;
 }
 
-footer {
-  font-size: .6rem;
-  color: #f8f8f8;
+.btn-outline-warning {
+	display: block;
+	color: rgb(8, 160, 163);
+	border-color: rgb(8, 160, 163);
+	background-color: transparent;
+	margin: 0 auto 1rem auto;
+
 }
 
-/******* Contact Form**********/
-form.contact-form {
-	padding-top: 35%;
+.btn-outline-warning:hover {
+	color: rgb(256, 256, 256);
+	background-color: rgb(8, 160, 163);
 }
 
-section.contact-features .card .card-body .card-title {
+.card-top {
+	border: 0;
+	padding-top: 3rem;
+	opacity: .8;
+	position: relative;
+	z-index: 1;
+}
+
+.card-top .card-body p {
+	text-align: center;
+	font-size: .75rem;
+	margin: 0;
+	padding: 0;
+}
+
+.card-title-top {
 	position: relative;
 }
 
-section.contact-features .card .card-body .card-title::before {
+.card-title-top > h3::before {
 	content: attr(data-title);
 	position: absolute;
 	display: block;
-	font-size: 1.5rem;
-	font-family: 'Philosopher';
+	font-size: 1.2rem;
 	text-align: center;
-	background-color: #f07677;
+	background-color: rgb(8, 160, 163);
 	color: #fff;
 	padding: 3rem;
 	width: 100%;
-	top: -100px;
+	top: -9rem;
 	left: 0;
-	border: 1px solid #f07677;
+	border: 1px solid rgb(8, 160, 163);
 	border-radius: 5px;
-	z-index: 0;
+	z-index: 1;
+}
+
+
+@media (min-width: 576px) {
+	.card-title-top h3::before {
+		top: calc(-7rem - 20px);
+		font-size:1.5rem;
+	}
+}
+
+footer {
+	font-size: .6rem;
+	color: #f8f8f8;
+}
+
+/******* lOGIN-REGISTER FORM*********/
+
+section.login-register-features {
+	height: 100%;
+	background-image: url(/static/images/adult_2.jpg);
+	background-size: cover;
+	background-repeat: none;
+	background-position: 50% 50%;
+}
+
+
+/*********CONTACT FORM********/
+
+section.contact-features {
+	background-image: url(/static/images/adult_2.jpg);
+	background-size: cover;
+	background-repeat: none;
+	background-position: 50% 100%;
 }
 
 section.contact-bottom-features  {
-	padding-top: 0px;
+	padding-top: 10em;
+	background-color: rgb(8, 160, 163);
+	margin-top: -10em;
 	position: relative;
-}
-
-section.contact-bottom-features::after {
-	content: '';
-	position: absolute;
-	background-color: #f07677;
-	width: 100%;
-	height: calc(100% + 150px);
-	left: 0;
-	bottom: 0;
-	z-index: -1;
+	z-index: 0;
 }
 
 section.contact-bottom-features .card {
 	background-color: transparent;
 	color: #fff;
+	padding: .5rem;
+	/*margin-top: 1.5rem;*/
+	border: 0;
 }
 
-section.contact-bottom-features .card .card-body {
-	border-radius: 5px;
-	border: 1px solid #fff;
+section.contact-bottom-features .card + .card {
+	margin-top: 1.5rem;
 }
 
-section.contact-bottom-features .card i {
-	font-size: 3rem;
-}
-
-section.contact-bottom-features .card .card-title {
+section.contact-bottom-features .card-title {
 	font-size: 1.5rem;
-	font-family: 'Philosopher';
 }
 
-.btn-outline-info {
-  color: #fff;
-  display: block;
-  border-color: #f07677;
-  background-color: #f07677;
-  float: none;
-  margin-left: auto;
-  margin-right: auto;
+section.contact-bottom-features .card-title i{
+	font-size: 3rem;
+	color: #DAA520;
 }
 
-.btn {
-  font-weight: 400;
-  font-size: 1.1rem;
-  text-transform: uppercase;
-}
-
-.btn-outline-info:hover {
-  color: #000;
-  font-size: 1.4rem;
-  border: 2px solid #f07677;
-  background-color: transparent;
+section.contact-bottom-features .card-body {
+	border-radius: 5px;
+	border: 1px solid #DAA520;
 }
 
 
-@media (min-width: 768px) {
-	section.contact-features .card .card-body .card-title::before {
-		width: 50%;
-		left: 25%;
-	}
-
+@media (min-width: 576px) {
 	form.contact-form {
-		padding-top: 10%;
 		padding-left: 10%;
 		padding-right: 10%;
+	}
+}
+
+@media (min-width: 768px) {
+	section.contact-bottom-features .card {
+		margin-top: 0;
+	}
+}
+
+@media (min-width: 992px) {
+	section.contact-features {
+		background-position: left center;
 	}
 }
