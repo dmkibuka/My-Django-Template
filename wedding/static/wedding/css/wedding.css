@@ -638,18 +638,36 @@ section.rsvp-features {
   background-image: url(/static/wedding/images/rsvp_bg.jpg);
   background-size: cover;
   background-position: right center;
+  background-repeat: none;
 }
 
-section.rsvp-features .card {
-  background-color: rgba(0,0,0,.6);
+section.rsvp-features .card-top {
+  border: 0;
+  padding-top: 3rem;
+  opacity: .9;
+  position: relative;
 }
 
-section.rsvp-features .section-heading h2 {
+section.rsvp-features .card .card-title-top {
+  position: relative;
+}
+
+section.rsvp-features .card .card-title-top > h3::before {
+  content: attr(data-title);
+  position: absolute;
+  display: block;
+  font-size: 1.2rem;
   font-family: 'Philosopher';
-}
-
-section.rsvp-features .card .card-title h3 {
-  font-family: 'Philosopher';
+  text-align: center;
+  background-color: rgb(240, 118, 119);
+  color: #fff;
+  padding: 3rem;
+  width: 100%;
+  top: -8rem;
+  left: 0;
+  border: 1px solid rgb(240, 118, 119);
+  border-radius: 5px;
+  z-index: 1;
 }
 
 section.rsvp-features-events .col-md {
@@ -658,6 +676,13 @@ section.rsvp-features-events .col-md {
 
 section.rsvp-features-events .col-md:last-child {
   margin-bottom: 0px;
+}
+
+@media (min-width: 576px) {
+  section.rsvp-features .card .card-title-top h3::before {
+    top: calc(-7rem - 20px);
+    font-size:1.5rem;
+  }
 }
 
 @media (min-width: 768px) {

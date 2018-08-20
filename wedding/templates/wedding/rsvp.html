@@ -5,82 +5,35 @@
 
   {% block extrahead %}
     {% load  static %}
-    
-    {% url 'wedding:rsvp' as rsvp_url %}
-    {% if request.path == rsvp_url %}
-      <!-- Wedding CSS -->
-      <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/wedding.css" %} "> 
-      <!-- Fonts CSS -->
-      <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/fonts.css" %} "> 
-    {% else %} 
-      <!-- Main Project CSS -->
-      <link rel="stylesheet" type="text/css" href=" {% static "css/base.css" %} "> 
-    {% endif %}
-    
+    <!-- Wedding CSS -->
+    <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/wedding.css" %} "> 
+    <!-- Fonts CSS -->
+    <link rel="stylesheet" type="text/css" href=" {% static "wedding/css/fonts.css" %} "> 
   {% endblock extrahead %}
 
   {% block page_title %} 
-    {% blocktrans with page_title|default:"contact us"|title as page_title %}
+    {% blocktrans with page_title|default:"wedding rsvp"|title as page_title %}
       {{page_title}}
     {% endblocktrans %} 
   {% endblock page_title %} 
 
   {% block content %}
-    {% url 'contact' as contact_url %}
-    {% url 'wedding:rsvp' as rsvp_url %}
-    <section class="rsvp-features bg-light" id="rsvp-features">
+    <section class="rsvp-features" id="rsvp-features">
       <div class="container">
-        <div class="section-heading">
-          <h2>
-            {% if request.path == contact_url  %}
-              {% blocktrans with section_hdg_title|default:'contact us'|upper as section_hdg_title %}
-                {{section_hdg_title}}  
-              {% endblocktrans %}  
-            {% elif request.path == rsvp_url %}
-              {% blocktrans with section_hdg_title|default:'reservation'|upper as section_hdg_title %}
-                {{section_hdg_title}}  
-              {% endblocktrans %}  
-            {% else %}
-              {% blocktrans with section_hdg_title|default:'contact us'|upper as section_hdg_title %}
-                {{section_hdg_title}}  
-              {% endblocktrans %}  
-            {% endif %}
-          </h2>
-        </div>
         <div class="row">
-          <div class="col-lg-8 offset-md-2">
-            <div class="card">
-              <div class="card-body">
-                <div class="card-title">
-                  <h3>
-                    {% if request.path == contact_url  %}
-                      {% blocktrans with contact_top_title|default:'we love to hear from you'|upper as contact_top_title %}
-                        {{contact_top_title}}  
-                      {% endblocktrans %}  
-                    {% elif request.path == rsvp_url %}
-                      {% blocktrans with contact_top_title|default:'rsvp form'|upper as contact_top_title %}
-                        {{contact_top_title}}  
-                      {% endblocktrans %}  
-                    {% else %}
-                      {% blocktrans with contact_top_title|default:'please complete form'|upper as contact_top_title %}
-                        {{contact_top_title}}  
-                      {% endblocktrans %}  
-                    {% endif %}
-                  </h3>
+          <div class="col-lg-4">
+            <div class="card card-top">
+              <div class="card-body bg-light">
+                <div class="card-title card-title-top">
+                  <h3 data-title="{% blocktrans with contact_top_title|default:'rsvp form'|upper as contact_top_title %}{{contact_top_title}}{% endblocktrans %}"></h3>
                 </div>
                 <form action="{{rsvp_url}}" class="rsvp-form" method="POST">
                   {% csrf_token %}
                   {{ form|crispy }}
                   <button type='submit' class='btn btn-outline-warning'>
-                  {% if request.path == contact_url %}
-                    {% trans "send message" %}
-                    {% elif request.path == rsvp_url %}
                     {% blocktrans with submit_btn|default:"i am attending"|upper as submit_btn %}
                       {{submit_btn}}
                     {% endblocktrans %}
-                  {% else %}
-                    {% trans "submit" %}
-                  {% endif %}
                   </button>
                 </form>
               </div>
@@ -98,19 +51,9 @@
                 <h3>
                   <i class="fa fa-map-marker" aria-hidden="true"></i>
                   <br>
-                  {% if request.path == contact_url  %}
-                    {% blocktrans with contact_btm_title|default:"mail"|title as contact_btm_title %}
+                    {% blocktrans with contact_btm_title|default:"church"|title as contact_btm_title %}
                       {{contact_btm_title}}
                     {% endblocktrans %}
-                  {% elif request.path == rsvp_url %}
-                    {% blocktrans with contact_btm_title|default:"venue"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% else %} 
-                    {% blocktrans with contact_btm_title|default:"home"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% endif %}
                 </h3>
               </div>
               <div class="card-body text-center">
@@ -119,6 +62,22 @@
             </div>
           </div>
           <div class="col-md">
+            <div class="card">
+              <div class="card-title">
+                <h3>
+                  <i class="fa fa-map-marker" aria-hidden="true"></i>
+                  <br>
+                  {% blocktrans with contact_btm_title|default:"reception"|title as contact_btm_title %}
+                    {{contact_btm_title}}
+                  {% endblocktrans %}
+                </h3>
+              </div>
+              <div class="card-body text-center">
+                <p>{{street_address|default:"marriot hotel"|title}}<br>{{city|default:"beltsville"|capfirst}} {{state|default:"md"|upper}} {{zipcode|default:"07105"}}</p>
+              </div>
+            </div>
+          </div>
+          <!--div class="col-md">
             <div class="card">
               <div class="card-title">
                 <h3>
@@ -143,26 +102,16 @@
                 <p>{{phone1|default:"(888) 555-5555"}}<br>{{phone2|default:"(999) 666-6666"}}</p>
               </div>
             </div>
-          </div>
+          </div-->
           <div class="col-md">
             <div class="card">
               <div class="card-title">
                 <h3>
                   <i class="fa fa-envelope" aria-hidden="true"></i>
                   <br>
-                  {% if request.path == contact_url  %}
-                    {% blocktrans with contact_btm_title|default:"email us"|title as contact_btm_title %}
+                  {% blocktrans with contact_btm_title|default:"contact us"|title as contact_btm_title %}
                       {{contact_btm_title}}
                     {% endblocktrans %}
-                  {% elif request.path == rsvp_url %}
-                    {% blocktrans with contact_btm_title|default:"email"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% else %} 
-                    {% blocktrans with contact_btm_title|default:"our emails"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% endif %}
                 </h3>
               </div>
               <div class="card-body text-center">
