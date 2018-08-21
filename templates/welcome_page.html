@@ -1,0 +1,59 @@
+{% extends 'base/base.html' %}
+
+  {% load i18n %}
+
+  {% load crispy_forms_tags %}
+
+  {% block extrahead %}
+    {% load  static %}
+      <!-- Custom fonts for this template -->
+      <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"> 
+  {% endblock extrahead %}
+
+  {% block page_title %} 
+    {% blocktrans with page_title|default:"welcome home"|title as page_title %}
+      {{page_title}}
+    {% endblocktrans %} 
+  {% endblock page_title %} 
+
+  {% block content %}
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Busines</span>
+      <span class="site-heading-lower">Business Casual</span>
+    </h1>
+    <section class="page-section clearfix">
+      <div class="container">
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'images/adult_4.jpg' %}" alt="David and Allen having fun">
+          <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+            <h2 class="section-heading mb-4">
+              <span class="section-heading-upper">celebrating</span>
+              <span class="section-heading-lower">25yrs of marriage</span>
+            </h2>
+            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo tempor enim, sit amet auctor metus commodo sed. Cras vehicula tempor condimentum. Fusce auctor laoreet mi. Proin non eros porttitor, tincidunt nulla nec, blandit nisi.
+            </p>
+            <div class="intro-button mx-auto">
+              <a class="btn btn-primary btn-xl" href="#">come join us!</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner text-center rounded">
+              <h2 class="section-heading mb-4">
+                <span class="section-heading-upper">Our Family Value</span>
+                <span class="section-heading-lower">PSALMS 23</span>
+              </h2>
+              <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo tempor enim, sit amet auctor metus commodo sed. Cras vehicula tempor condimentum. Fusce auctor laoreet mi. Proin non eros porttitor, tincidunt nulla nec, blandit nisi. Pellentesque condimentum lacus eu leo interdum, vel mattis augue consectetur. Etiam varius dui dolor, eget tempor nibh vestibulum eget. Nulla sed arcu ut odio lobortis tristique.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  {% endblock %}
