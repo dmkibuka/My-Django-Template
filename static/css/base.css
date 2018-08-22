@@ -18,12 +18,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Raleway';
+  /*font-family: 'Raleway';*/
+  font-family: 'Lora';
 }
 
-p {
+/*p {
   line-height: 1.75;
-}
+}*/
 
 .text-faded {
   color: rgba(255, 255, 255, 0.3);
@@ -50,23 +51,31 @@ p {
 }
 
 .page-section {
-  margin-top: 5rem;
-  margin-bottom: 5rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 992px) {
+  .page-section {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
 }
 
 .section-heading {
   text-transform: uppercase;
+  margin: 0 auto;
 }
 
 .section-heading .section-heading-upper {
   display: block;
   font-size: 1rem;
-  font-weight: 1000;
+  /*font-weight: 1000;*/
 }
 
 .section-heading .section-heading-lower {
   display: block;
-  font-size: 3rem;
+  /*font-size: 3rem;*/
   font-weight: 100;
 }
 
@@ -104,17 +113,26 @@ p {
   }
 }
 
-.btn-xl {
+/*.btn-xl {
   font-weight: 700;
   font-size: 0.8rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
-}
+}*/
 
 .intro {
   position: relative;
+}
+
+.intro .intro-text {
+  padding: .5rem;
+}
+
+.intro .intro-text > p {
+  text-align: justify;
+  font-size: .85rem;
 }
 
 @media (min-width: 992px) {
@@ -126,13 +144,18 @@ p {
     left: 0;
     width: 60%;
     margin-top: 3rem;
+    padding: 3rem;
     position: absolute;
   }
   .intro .intro-text .intro-button {
-    width: 100%;
-    left: 0;
+    width: 50%;
+    left: 25%;
     position: absolute;
     bottom: -2rem;
+  }
+  .intro .intro-text > p {
+    text-align: center;
+    font-size: 1rem;
   }
 }
 
@@ -150,8 +173,8 @@ p {
 
 .cta .cta-inner {
   position: relative;
-  padding: 3rem;
-  margin: 0.5rem;
+  padding: .5rem;
+  /*margin: 0.5rem;*/
   background-color: rgba(255, 255, 255, 0.85);
 }
 
@@ -166,69 +189,39 @@ p {
   border: 0.25rem solid rgba(255, 255, 255, 0.85);
 }
 
-@media (min-width: 992px) {
-  .about-heading .about-heading-img {
-    position: relative;
-    z-index: 0;
-  }
-  .about-heading .about-heading-content {
-    margin-top: -5rem;
-    position: relative;
-    z-index: 1;
-  }
+.family-value .cta-inner > p {
+  text-align: justify;
+  font-size: .85rem;
 }
 
 @media (min-width: 992px) {
-  .product-item .product-item-title {
-    position: relative;
-    z-index: 1;
-    margin-bottom: -3rem;
-  }
-  .product-item .product-item-img {
-    position: relative;
-    z-index: 0;
-    max-width: 60vw;
-  }
-  .product-item .product-item-description {
-    position: relative;
-    z-index: 1;
-    margin-top: -3rem;
-    max-width: 50vw;
+  .family-value .cta-inner > p {
+    text-align: center;
+    font-size: 1rem;
   }
 }
 
-.list-hours {
-  font-size: 0.9rem;
+
+/************ Buttons**********/
+
+.btn-warning {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-color: rgb(230, 167, 86);
+  background-color: rgb(230, 167, 86);
 }
 
-.list-hours .list-hours-item {
-  border-bottom: 1px solid rgba(230, 167, 86, 0.5);
-  padding-bottom: .25rem;
-  margin-bottom: 1rem;
-  font-style: italic;
+.btn-warning:hover {
+  background-color: #f2f2f2;
+  color: rgb(230, 167, 86);
 }
 
-.list-hours .list-hours-item.today {
-  font-weight: bold;
-  color: #e6a756;
-}
-
-@media (min-width: 992px) {
-  .list-hours {
-    width: 50%;
-    font-size: 1.1rem;
-  }
-}
-
-.address strong {
-  font-size: 1.2rem;
-}
-
-.footer {
+/*.footer {
   background-color: rgba(47, 23, 15, 0.9);
-}
+}*/
 
-.text-primary {
+/*.text-primary {
   color: #e6a756 !important;
 }
 
@@ -248,7 +241,7 @@ p {
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
   background-color: #df902a;
   border-color: #df902a;
-}
+}*/
 
 .font-weight-light {
   font-weight: 100 !important;
@@ -271,9 +264,6 @@ p {
   transform-style: preserve-3d;
 }
 
-/*.card-flip > .card {
-  height: 25em;
-}*/
 
 .back {
   transform: rotateY(-180deg);
@@ -303,4 +293,76 @@ p {
 .card-container {
   display: grid;
   perspective: 700px;
+}
+
+
+/********FLIPPING CARD STYLES **************/
+
+.card .main {
+  min-height: 10em;
+}
+.card .back .main {
+  height: 18em;
+}
+.card .name {
+  font-size: 22px;
+  line-height: 28px;
+  margin: 10px 0 0;
+  text-align: center;
+  text-transform: capitalize;
+}
+.card h5{
+  margin: 5px 0;
+  font-weight: 400;
+  line-height: 20px;
+}
+.card .profession{
+  margin-bottom: 20px;
+}
+.card .card-footer {
+  border-top: 1px solid #EEEEEE;
+  color: #999999;
+  margin: 30px 0 0;
+  padding: 10px 0 0;
+  text-align: center;
+}
+.card .card-footer .social-links{
+  font-size: 1.5em;
+}
+
+.card .card-footer .social-links a{
+  margin: 0 3px;
+}
+
+.card .motto{
+  color: #999999;
+  font-size: 14px;
+  font-weight: 400;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.card .stats-container{
+  width: 100%;
+  margin-top: 50px;
+}
+.card .stats{
+  display: block;
+  float: left;
+  width: 33.333333%;
+  text-align: center;
+}
+
+.card .stats:first-child{
+  border-right: 1px solid #EEEEEE;
+}
+.card .stats:last-child{
+  border-left: 1px solid #EEEEEE;
+}
+.card .stats h4{
+  font-weight: 300;
+  margin-bottom: 5px;
+}
+.card .stats p{
+  color: #777777;
 }
