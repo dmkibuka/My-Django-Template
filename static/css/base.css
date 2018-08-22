@@ -40,7 +40,7 @@ p {
 .site-heading .site-heading-upper {
   display: block;
   font-size: 2rem;
-  font-weight: 800;
+  font-weight: 1000;
 }
 
 .site-heading .site-heading-lower {
@@ -61,7 +61,7 @@ p {
 .section-heading .section-heading-upper {
   display: block;
   font-size: 1rem;
-  font-weight: 800;
+  font-weight: 1000;
 }
 
 .section-heading .section-heading-lower {
@@ -85,7 +85,7 @@ p {
 
 #mainNav .navbar-nav .nav-item .nav-link {
   color: rgba(255, 255, 255, 0.7);
-  font-weight: 800;
+  font-weight: 1000;
 }
 
 #mainNav .navbar-nav .nav-item.active .nav-link {
@@ -155,7 +155,7 @@ p {
   background-color: rgba(255, 255, 255, 0.85);
 }
 
-.cta .cta-inner:before {
+.cta .cta-inner::before {
   border-radius: 0.5rem;
   content: '';
   position: absolute;
@@ -252,4 +252,55 @@ p {
 
 .font-weight-light {
   font-weight: 100 !important;
+}
+
+
+/******** FLIPPING CARDS**********/
+
+.card-container {
+  perspective: 700px;
+}
+
+.card-flip, .card-container {
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
+}
+
+.card-flip div {
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+
+/*.card-flip > .card {
+  height: 25em;
+}*/
+
+.back {
+  transform: rotateY(-180deg);
+}
+
+.card-container:hover .card-flip {
+  transform: rotateY(180deg);
+}
+
+.card-flip {
+  display: grid;
+  grid-template: 1fr / 1fr;
+  grid-template-areas: "frontAndBack";
+  transform-style: preserve-3d;
+  transition: all 0.7s ease;
+}
+
+.front {
+  grid-area: frontAndBack;
+}
+
+.back {
+  grid-area: frontAndBack;
+  transform: rotateY(-180deg);
+}
+
+.card-container {
+  display: grid;
+  perspective: 700px;
 }
