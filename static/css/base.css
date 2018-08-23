@@ -232,30 +232,30 @@ h6 {
 
 /******** FLIPPING CARDS**********/
 
-.card-container {
+.family-card .card-container {
   perspective: 700px;
 }
 
-.card-flip, .card-container {
+.family-card .card-flip, .card-container {
   transform-style: preserve-3d;
   transition: all 0.7s ease;
 }
 
-.card-flip div {
+.family-card .card-flip div {
   backface-visibility: hidden;
   transform-style: preserve-3d;
 }
 
 
-.back {
+.family-card .back {
   transform: rotateY(-180deg);
 }
 
-.card-container:hover .card-flip {
+.family-card .card-container:hover .card-flip {
   transform: rotateY(180deg);
 }
 
-.card-flip {
+.family-card .card-flip {
   display: grid;
   grid-template: 1fr / 1fr;
   grid-template-areas: "frontAndBack";
@@ -263,16 +263,16 @@ h6 {
   transition: all 0.7s ease;
 }
 
-.front {
+.family-card .front {
   grid-area: frontAndBack;
 }
 
-.back {
+.family-card .back {
   grid-area: frontAndBack;
   transform: rotateY(-180deg);
 }
 
-.card-container {
+.family-card .card-container {
   display: grid;
   perspective: 700px;
 }
@@ -293,28 +293,26 @@ h6 {
   color: #f8f8f8;
 }
 
-.card .main {
+.family-card .card .main {
   min-height: 10em;
 }
-.card .back .main {
-  height: 18em;
-}
-.card .name {
+
+.family-card .card .name {
   font-size: 22px;
   line-height: 28px;
   margin: 10px 0 0;
   text-align: center;
   text-transform: capitalize;
 }
-.card h5{
+.family-card .card h5{
   margin: 5px 0;
   font-weight: 400;
   line-height: 20px;
 }
-.card .profession{
+.family-card .card .profession{
   margin-bottom: 20px;
 }
-.card .card-footer {
+.family-card .card .card-footer {
   color: #999999;
   text-align: center;
 }
@@ -324,7 +322,7 @@ h6 {
   padding-right: 10px;
 }
 
-.social-links [class*="fa fa-"] {
+.family-card .social-links [class*="fa fa-"] {
   background-color: rgba(47, 23, 15, 0.85);
   border-radius: 40px;
   color: #fff;
@@ -335,14 +333,22 @@ h6 {
   width: 40px;
   font-size: 30px;
   text-align: center;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
   transition: .5s;
 }
 
 .family-card .back .card-footer a:hover .fa {
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -webkit-transform: rotate(360deg);
   transform: rotate(360deg);
 }
 
-.card .motto{
+.family-card .card .motto{
   color: #999999;
   font-size: 14px;
   font-weight: 400;
@@ -350,27 +356,27 @@ h6 {
   text-align: center;
 }
 
-.card .stats-container{
+.family-card .card .stats-container{
   width: 100%;
   margin-top: 50px;
 }
-.card .stats{
+.family-card .card .stats{
   display: block;
   float: left;
   width: 33.333333%;
   text-align: center;
 }
 
-.card .stats:first-child{
+.family-card .card .stats:first-child{
   border-right: 1px solid #EEEEEE;
 }
-.card .stats:last-child{
+.family-card .card .stats:last-child{
   border-left: 1px solid #EEEEEE;
 }
-.card .stats h4{
+.family-card .card .stats h4{
   font-weight: 300;
   margin-bottom: 5px;
 }
-.card .stats p{
+.family-card .card .stats p{
   color: #777777;
 }
