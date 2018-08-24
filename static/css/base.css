@@ -279,6 +279,11 @@ h6 {
 
 
 /********FLIPPING CARD STYLES **************/
+
+.family-card [class*="col-"] {
+  padding-bottom: 1.25rem;
+}
+
 .family-card .front .husband img {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -289,12 +294,12 @@ h6 {
 }
 
 .family-card .back .card-body {
-  background-color: rgba(230, 167, 86, .85);
+  height: 12.9em;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  background: rgba(230, 167, 86, .85);
   color: #f8f8f8;
-}
-
-.family-card .card .main {
-  min-height: 10em;
 }
 
 .family-card .card .name {
@@ -309,17 +314,14 @@ h6 {
   font-weight: 400;
   line-height: 20px;
 }
-.family-card .card .profession{
-  margin-bottom: 20px;
-}
+
 .family-card .card .card-footer {
   color: #999999;
   text-align: center;
 }
 
 .family-card .back .card-footer  {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 4px 10px;
 }
 
 .family-card .social-links [class*="fa fa-"] {
@@ -356,27 +358,30 @@ h6 {
   text-align: center;
 }
 
-.family-card .card .stats-container{
-  width: 100%;
-  margin-top: 50px;
-}
-.family-card .card .stats{
-  display: block;
-  float: left;
-  width: 33.333333%;
-  text-align: center;
+.family-card .back .card a[class*="mo-about-link"] {
+  color: rgb(47, 23, 15);
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
 }
 
-.family-card .card .stats:first-child{
-  border-right: 1px solid #EEEEEE;
+.family-card .back .card .card-body a:hover i {
+  color: rgb(254, 254, 254);
 }
-.family-card .card .stats:last-child{
-  border-left: 1px solid #EEEEEE;
+
+.family-card .blockquote > p {
+  font-size: 1rem;
+  margin-bottom: 0;
 }
-.family-card .card .stats h4{
-  font-weight: 300;
-  margin-bottom: 5px;
+
+.family-card .blockquote > footer {
+  font-size: .85rem;
 }
-.family-card .card .stats p{
-  color: #777777;
+
+@media (min-width: 992px) {
+  .family-card [class*="col-"] {
+    padding-bottom: inherit;
+  }
 }

@@ -14,6 +14,15 @@ class WelcomePageView(TemplateView):
     #     context['latest_articles'] = Article.objects.all()[:5]
     #     return context
 
+class FamilyPageView(TemplateView):
+
+    template_name = "detail_page.html"
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context['latest_articles'] = Article.objects.all()[:5]
+    #     return context
+
 def home_page(request):
     context = {
         "page_title":"My Family | Welcome",

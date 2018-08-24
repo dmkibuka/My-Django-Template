@@ -1,5 +1,10 @@
 $(document).ready(function() {
 
+  //Carousel Interval
+  $('.carousel').carousel({
+  interval: 5000
+  })
+
   // Contact Form Handler
   var contactForm = $(".contact-form")
   var contactFormMethod = contactForm.attr("method")

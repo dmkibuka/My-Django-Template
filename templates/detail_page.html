@@ -12,16 +12,22 @@
   {% endblock extrahead %}
 
   {% block page_title %} 
-    {% blocktrans with page_title|default:"welcome | home"|title as page_title %}
+    {% blocktrans with page_title|default:"my details"|title as page_title %}
       {{page_title}}
     {% endblocktrans %} 
   {% endblock page_title %} 
 
+  {% block carousel %}
+    <setion class="header-carousel">
+      {% include "base/snippets/carousel.html" %}
+    </setion>
+  {% endblock carousel %}
+
   {% block content %}
-    <h1 class="site-heading text-center text-white d-none d-lg-block">
+    <!--h1 class="site-heading text-center text-white d-none d-lg-block">
       <span class="site-heading-upper text-primary mb-3">David &amp; Allen</span>
       <span class="site-heading-lower">Welcome Home!</span>
-    </h1>
+    </h1-->
     <section class="page-section clearfix">
       <div class="container">
         <div class="intro">
@@ -65,9 +71,11 @@
                 <div class="card husband">
                   <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
                   <div class="card-body">
-                    <h3 class="name">Tanisha Marvel</h3>
-                    <p class="profession text-center text-faded">CEO</p>
-                    <p class="text-center">"I'm the new Tanisha, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                    <div class="main">
+                      <h3 class="name">Tanisha Marvel</h3>
+                      <p class="profession text-center text-faded">CEO</p>
+                      <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                    </div>
                   </div>
                   <div class="card-footer">
                     <i class="fa fa-mail-forward"></i> Auto Rotation
@@ -78,14 +86,34 @@
               <div class="back">
                 <!-- Card Contents Here -->
                 <div class="card">
-                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
-                  <div class="card-body mx-auto">
-                    <h5 class="motto">"To Be or Not to Be, This is My Awesome Motto!"</h5>
-                    <blockquote class="blockquote mb-0">
-                      <p>Family is Not an Important Thing. It's Everything</p>
-                      <footer class="blockquote-footer">Michael J. Fox | <cite title="Source Title">Google.com</cite></footer>
-                    </blockquote>
-                    <p class="text-center mt-3"> More About Tanisha | <a href="#" class="card-link mo-about-link"><i class="fa fa-mail-forward"></i></a></p>
+                  <div class="card-header">
+                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="main">
+                      <h4 class="text-center">Job Description</h4>
+                      <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+                      <div class="stats-container">
+                        <div class="stats">
+                          <h4>235</h4>
+                          <p>
+                            Followers
+                          </p>
+                        </div>
+                        <div class="stats">
+                          <h4>114</h4>
+                          <p>
+                            Following
+                          </p>
+                        </div>
+                        <div class="stats">
+                          <h4>35</h4>
+                          <p>
+                            Projects
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="card-footer">
                     <div class="social-links text-center">
@@ -106,12 +134,14 @@
             <div class="card-flip">
               <div class="front">
                 <!-- Card Contents Here -->
-                <div class="card husband">
+                <div class="card">
                   <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
                   <div class="card-body">
-                    <h3 class="name">Tanisha Marvel</h3>
-                    <p class="profession text-center text-faded">CEO</p>
-                    <p class="text-center">"I'm the new Tanisha, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                    <div class="main">
+                      <h3 class="name">Tanisha Marvel</h3>
+                      <p class="profession text-center text-faded">CEO</p>
+                      <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                    </div>
                   </div>
                   <div class="card-footer">
                     <i class="fa fa-mail-forward"></i> Auto Rotation
@@ -122,14 +152,34 @@
               <div class="back">
                 <!-- Card Contents Here -->
                 <div class="card">
-                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
-                  <div class="card-body mx-auto">
-                    <h5 class="motto">"To Be or Not to Be, This is My Awesome Motto!"</h5>
-                    <blockquote class="blockquote mb-0">
-                      <p>Family is Not an Important Thing. It's Everything</p>
-                      <footer class="blockquote-footer">Michael J. Fox | <cite title="Source Title">Google.com</cite></footer>
-                    </blockquote>
-                    <p class="text-center mt-3"> More About Tanisha | <a href="#" class="card-link mo-about-link"><i class="fa fa-mail-forward"></i></a></p>
+                  <div class="card-header">
+                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="main">
+                      <h4 class="text-center">Job Description</h4>
+                      <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+                      <div class="stats-container">
+                        <div class="stats">
+                          <h4>235</h4>
+                          <p>
+                            Followers
+                          </p>
+                        </div>
+                        <div class="stats">
+                          <h4>114</h4>
+                          <p>
+                            Following
+                          </p>
+                        </div>
+                        <div class="stats">
+                          <h4>35</h4>
+                          <p>
+                            Projects
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="card-footer">
                     <div class="social-links text-center">
@@ -150,12 +200,14 @@
             <div class="card-flip">
               <div class="front">
                 <!-- Card Contents Here -->
-                <div class="card husband">
+                <div class="card">
                   <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
                   <div class="card-body">
-                    <h3 class="name">Tanisha Marvel</h3>
-                    <p class="profession text-center text-faded">CEO</p>
-                    <p class="text-center">"I'm the new Tanisha, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                    <div class="main">
+                      <h3 class="name">Tanisha Marvel</h3>
+                      <p class="profession text-center text-faded">CEO</p>
+                      <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                    </div>
                   </div>
                   <div class="card-footer">
                     <i class="fa fa-mail-forward"></i> Auto Rotation
@@ -166,14 +218,34 @@
               <div class="back">
                 <!-- Card Contents Here -->
                 <div class="card">
-                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
-                  <div class="card-body mx-auto">
-                    <h5 class="motto">"To Be or Not to Be, This is My Awesome Motto!"</h5>
-                    <blockquote class="blockquote mb-0">
-                      <p>Family is Not an Important Thing. It's Everything</p>
-                      <footer class="blockquote-footer">Michael J. Fox | <cite title="Source Title">Google.com</cite></footer>
-                    </blockquote>
-                    <p class="text-center mt-3"> More About Tanisha | <a href="#" class="card-link mo-about-link"><i class="fa fa-mail-forward"></i></a></p>
+                  <div class="card-header">
+                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+                  </div>
+                  <div class="card-body">
+                    <div class="main">
+                      <h4 class="text-center">Job Description</h4>
+                      <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
+                      <div class="stats-container">
+                        <div class="stats">
+                          <h4>235</h4>
+                          <p>
+                            Followers
+                          </p>
+                        </div>
+                        <div class="stats">
+                          <h4>114</h4>
+                          <p>
+                            Following
+                          </p>
+                        </div>
+                        <div class="stats">
+                          <h4>35</h4>
+                          <p>
+                            Projects
+                          </p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="card-footer">
                     <div class="social-links text-center">

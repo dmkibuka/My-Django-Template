@@ -20,7 +20,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import RedirectView
 
-from .views import home_page, about_page, contact_page, WelcomePageView
+from .views import home_page, about_page, contact_page, WelcomePageView, FamilyPageView
 
 
 urlpatterns = [
@@ -31,6 +31,7 @@ urlpatterns = [
     path('accounts/', include('accounts.passwords.urls', namespace='password')),
     path('account/', RedirectView.as_view(url='/accounts')),
     path('welcome/', WelcomePageView.as_view(), name='welcome'),
+    path('welcome/family/', FamilyPageView.as_view(), name='family'),
     path('settings/', RedirectView.as_view(url='/accounts')),
     path('admin/', admin.site.urls),
 ]
