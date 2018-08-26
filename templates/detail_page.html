@@ -9,6 +9,7 @@
       <!-- Custom fonts for this template -->
       <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet"> 
+      <link rel="stylesheet" href="{% static 'css/detail-page.css' %}">
   {% endblock extrahead %}
 
   {% block page_title %} 
@@ -18,9 +19,9 @@
   {% endblock page_title %} 
 
   {% block carousel %}
-    <setion class="header-carousel">
+    <section class="header-carousel">
       {% include "base/snippets/carousel.html" %}
-    </setion>
+    </section>
   {% endblock carousel %}
 
   {% block content %}
@@ -31,235 +32,56 @@
     <section class="page-section clearfix">
       <div class="container">
         <div class="intro">
-          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'images/adult_4.jpg' %}" alt="David and Allen having fun">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'images/adult_5.jpg' %}" alt="David and Allen having fun">
           <div class="intro-text left-0 bg-faded rounded">
             <h2 class="section-heading text-center mb-4">
-              <span class="section-heading-upper">celebrating</span>
-              <span class="section-heading-lower">25yrs of marriage</span>
+              <span class="section-heading-upper">Its Me Time!!</span>
+              <span class="section-heading-lower">Something Nobody Knew About Me</span>
             </h2>
             <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo tempor enim, sit amet auctor metus commodo sed. Cras vehicula tempor condimentum. Fusce auctor laoreet mi. Proin non eros porttitor, tincidunt nulla nec, blandit nisi.
             </p>
-            <div class="intro-button">
+            <!--div class="intro-button">
               <a class="btn btn-warning btn-xl" href="#">Please Join Us!</a>
-            </div>
+            </div-->
           </div>
         </div>
       </div>
     </section>
-    <section class="page-section family-value clearfix cta">
+    <section class="page-section">
       <div class="container">
         <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="cta-inner rounded">
-              <h2 class="section-heading text-center mb-4">
-                <span class="section-heading-upper">Our Family Value</span>
-                <span class="section-heading-lower">PSALMS 23</span>
-              </h2>
-              <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo tempor enim, sit amet auctor metus commodo sed. Cras vehicula tempor condimentum. Fusce auctor laoreet mi. Proin non eros porttitor, tincidunt nulla nec, blandit nisi. Pellentesque condimentum lacus eu leo interdum, vel mattis augue consectetur. Etiam varius dui dolor, eget tempor nibh vestibulum eget. Nulla sed arcu ut odio lobortis tristique.</p>
+          <div class="col-md-5"><img src="//unsplash.it/499/500" alt="" class="img-fluid rounded"></div>
+          <div class="col-md-7 about-detail">
+            <div class="about-detail-info-right">
+              <h3>My Professional Experiences</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <section class="page-section family-card">
-      <div class="container">
         <div class="row">
-          <div class="card-container col-lg-4">
-            <div class="card-flip">
-              <div class="front">
-                <!-- Card Contents Here -->
-                <div class="card husband">
-                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
-                  <div class="card-body">
-                    <div class="main">
-                      <h3 class="name">Tanisha Marvel</h3>
-                      <p class="profession text-center text-faded">CEO</p>
-                      <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <i class="fa fa-mail-forward"></i> Auto Rotation
-                  </div>
-                </div>
-                <!--End front card contents -->
-              </div>
-              <div class="back">
-                <!-- Card Contents Here -->
-                <div class="card">
-                  <div class="card-header">
-                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                  </div>
-                  <div class="card-body">
-                    <div class="main">
-                      <h4 class="text-center">Job Description</h4>
-                      <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-                      <div class="stats-container">
-                        <div class="stats">
-                          <h4>235</h4>
-                          <p>
-                            Followers
-                          </p>
-                        </div>
-                        <div class="stats">
-                          <h4>114</h4>
-                          <p>
-                            Following
-                          </p>
-                        </div>
-                        <div class="stats">
-                          <h4>35</h4>
-                          <p>
-                            Projects
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="social-links text-center">
-                      <a href="#" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
-                      <!--a href="#" class="google" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a-->
-                      <a href="#" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-                      <a href="#" class="linkedin" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
-                      <a href="#" class="instagram" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
-                      <a href="#" class="youtube" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <!--End back card contents-->
-              </div>
+          <div class="col-md-5 order-md-2"><img src="//unsplash.it/500/499" alt="" class="img-fluid rounded"></div>
+          <div class="col-md-7 about-detail order-md-1">
+            <div class="about-detail-info-left">
+              <h3>My Professional Experiences</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
             </div>
           </div>
-          <div class="card-container col-lg-4">
-            <div class="card-flip">
-              <div class="front">
-                <!-- Card Contents Here -->
-                <div class="card">
-                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
-                  <div class="card-body">
-                    <div class="main">
-                      <h3 class="name">Tanisha Marvel</h3>
-                      <p class="profession text-center text-faded">CEO</p>
-                      <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <i class="fa fa-mail-forward"></i> Auto Rotation
-                  </div>
-                </div>
-                <!--End front card contents -->
-              </div>
-              <div class="back">
-                <!-- Card Contents Here -->
-                <div class="card">
-                  <div class="card-header">
-                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                  </div>
-                  <div class="card-body">
-                    <div class="main">
-                      <h4 class="text-center">Job Description</h4>
-                      <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-                      <div class="stats-container">
-                        <div class="stats">
-                          <h4>235</h4>
-                          <p>
-                            Followers
-                          </p>
-                        </div>
-                        <div class="stats">
-                          <h4>114</h4>
-                          <p>
-                            Following
-                          </p>
-                        </div>
-                        <div class="stats">
-                          <h4>35</h4>
-                          <p>
-                            Projects
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="social-links text-center">
-                      <a href="#" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
-                      <!--a href="#" class="google" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a-->
-                      <a href="#" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-                      <a href="#" class="linkedin" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
-                      <a href="#" class="instagram" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
-                      <a href="#" class="youtube" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <!--End back card contents-->
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5"><img src="//unsplash.it/501/500" alt="" class="img-fluid rounded"></div>
+          <div class="col-md-7 about-detail">
+            <div class="about-detail-info-right">
+              <h3>My Professional Experiences</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
             </div>
           </div>
-          <div class="card-container col-lg-4">
-            <div class="card-flip">
-              <div class="front">
-                <!-- Card Contents Here -->
-                <div class="card">
-                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
-                  <div class="card-body">
-                    <div class="main">
-                      <h3 class="name">Tanisha Marvel</h3>
-                      <p class="profession text-center text-faded">CEO</p>
-                      <p class="text-center">"I'm the new Sinatra, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <i class="fa fa-mail-forward"></i> Auto Rotation
-                  </div>
-                </div>
-                <!--End front card contents -->
-              </div>
-              <div class="back">
-                <!-- Card Contents Here -->
-                <div class="card">
-                  <div class="card-header">
-                    <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
-                  </div>
-                  <div class="card-body">
-                    <div class="main">
-                      <h4 class="text-center">Job Description</h4>
-                      <p class="text-center">Web design, Adobe Photoshop, HTML5, CSS3, Corel and many others...</p>
-                      <div class="stats-container">
-                        <div class="stats">
-                          <h4>235</h4>
-                          <p>
-                            Followers
-                          </p>
-                        </div>
-                        <div class="stats">
-                          <h4>114</h4>
-                          <p>
-                            Following
-                          </p>
-                        </div>
-                        <div class="stats">
-                          <h4>35</h4>
-                          <p>
-                            Projects
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="social-links text-center">
-                      <a href="#" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
-                      <!--a href="#" class="google" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a-->
-                      <a href="#" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
-                      <a href="#" class="linkedin" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
-                      <a href="#" class="instagram" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
-                      <a href="#" class="youtube" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
-                    </div>
-                  </div>
-                </div>
-                <!--End back card contents-->
-              </div>
+        </div>
+        <div class="row">
+          <div class="col-md-5 order-md-2"><img src="//unsplash.it/500/501" alt="" class="img-fluid rounded"></div>
+          <div class="col-md-7 about-detail order-md-1">
+            <div class="about-detail-info-left">
+              <h3>My Professional Experiences</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium veniam exercitationem expedita laborum at voluptate. Labore, voluptates totam at aut nemo deserunt rem magni pariatur quos perspiciatis atque eveniet unde.</p>
             </div>
           </div>
         </div>

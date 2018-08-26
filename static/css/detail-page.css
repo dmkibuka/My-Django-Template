@@ -1,0 +1,29 @@
+body {
+  background-image: none;
+  background: #f9f8fa;
+}
+.about-detail {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: 1rem;
+}
+.about-detail .about-detail-info-right > h3 {
+  color:#f2f2f2;
+  padding: 1rem;
+  text-align: center;
+}
+.about-detail-info-right {
+  border-radius: 5px;
+  background: rgba(230, 167, 86, 0.9);
+  padding: 1rem;
+}
+.about-detail .about-detail-info-left > h3 {
+  padding: 1rem;
+  text-align: center;
+}
+.about-detail-info-left {
+  border-radius: 5px;
+  background: rgba(254, 254, 254, 0.9);
+  padding: 1rem;
+}
