@@ -50,9 +50,14 @@ INSTALLED_APPS = [
     'accounts',
 
     # Third_Party_Apps
+    'django.contrib.sites',
     'crispy_forms',
     'storages',
+    'photologue',
+    'sortedm2m',
 ]
+
+SITE_ID = 1
 
 AUTH_USER_MODEL = 'accounts.User' #custom user model to override generic user model
 #Custon-Session Handling
