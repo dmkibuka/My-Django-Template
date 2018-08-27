@@ -5,9 +5,9 @@ from django.shortcuts import render
 from .forms import ContactForm
 #from articles.models import Article
 
-class WelcomePageView(TemplateView):
+class HomePageView(TemplateView):
 
-    template_name = "welcome_page.html"
+    template_name = "home_page.html"
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
@@ -23,7 +23,7 @@ class FamilyPageView(TemplateView):
     #     context['latest_articles'] = Article.objects.all()[:5]
     #     return context
 
-def home_page(request):
+def landing_page(request):
     context = {
         "page_title":"My Family | Welcome",
         "brand_name":"Mysite",
@@ -32,7 +32,7 @@ def home_page(request):
     }
     if request.user.is_authenticated:
         context["premium_content"] = "YEAHHHHHH"
-    return render(request, "home_page.html", context)
+    return render(request, "landing_page.html", context)
 
 def about_page(request):
     context = {

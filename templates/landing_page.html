@@ -1,0 +1,66 @@
+{% extends 'base_2.html' %}
+
+  {% load i18n %}
+
+	{% block extrahead %}
+		{% load  static %}
+		<!-- Cover CSS -->
+		<link rel="stylesheet" type="text/css" href=" {% static "css/cover.css" %} "> 
+	{% endblock extrahead %}
+
+	{% block page_title %}
+		{{ page_title }}
+	{% endblock page_title %}
+
+
+	{% block navbar %}
+	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
+    <header class="masthead mb-auto">
+      <div class="inner">
+        <h3 class="masthead-brand">{{ brand_name|capfirst }}</h3>
+        <!--<nav class="nav nav-masthead justify-content-center">
+        	<a class="nav-link active" href="#">Home</a>
+        	<a class="nav-link" href="#">Features</a>
+        	{% url 'contact' as contact_url %}
+        	<a class="nav-link" href="{{  contact_url }}">Contact</a>
+        </nav>-->
+      </div>
+    </header>
+	{% endblock navbar %}
+
+	{% block content %}
+    <main role="main" class="inner cover">
+      <div class="cover-text-section">
+        <h1 class="cover-heading">
+        {% blocktrans with page_header|title as page_header %}
+          {{page_header}}
+        {% endblocktrans %}
+        </h1>
+        <p class="lead">
+          {% blocktrans with cover_intro|capfirst as cover_intro %}
+            {{cover_intro}}
+          {% endblocktrans %}
+        </p>
+      </div>
+      <p class="lead">
+        {% url 'accounts:login' as login_url %}
+        <a href="{{ login_url }}" class="btn btn-outline-success btn-lg">Log In</a>
+        {% url 'accounts:register' as register_url %}
+        <a href="{{ register_url }}" class="btn btn-outline-primary btn-lg">Sign up</a>
+      </p>
+    </main>
+	{% endblock %}
+
+	{% block footer %}
+		<footer class="mastfoot mt-auto">
+      <div class="inner">
+        <p>
+			    {{ brand_name|capfirst }} &copy;
+			    {% now 'Y' %}, 
+			    {{request.get_host}} | All rights reserved <br> 
+			    <a href="#">Terms of Use | Privacy Policy</a>
+			  </p>
+      </div>
+    </footer>
+  </div>
+	{% endblock footer %}

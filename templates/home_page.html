@@ -1,66 +1,204 @@
-{% extends 'base_2.html' %}
+{% extends 'base.html' %}
 
   {% load i18n %}
 
-	{% block extrahead %}
-		{% load  static %}
-		<!-- Cover CSS -->
-		<link rel="stylesheet" type="text/css" href=" {% static "css/cover.css" %} "> 
-	{% endblock extrahead %}
+  {% load crispy_forms_tags %}
 
-	{% block page_title %}
-		{{ page_title }}
-	{% endblock page_title %}
+  {% block extrahead %}
+    {% load  static %}
+      <!-- Custom fonts for this template -->
+      <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    <style>
+      body {
+        background: url("/static/images/adult_1.jpg");
+        background-attachment: fixed;
+        background-position: center top;
+        background-size: cover;
+      }
+    </style> 
+  {% endblock extrahead %}
 
+  {% block page_title %} 
+    {% blocktrans with page_title|default:"welcome | home"|title as page_title %}
+      {{page_title}}
+    {% endblocktrans %} 
+  {% endblock page_title %} 
 
-	{% block navbar %}
-	<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column text-center">
-    <header class="masthead mb-auto">
-      <div class="inner">
-        <h3 class="masthead-brand">{{ brand_name|capfirst }}</h3>
-        <!--<nav class="nav nav-masthead justify-content-center">
-        	<a class="nav-link active" href="#">Home</a>
-        	<a class="nav-link" href="#">Features</a>
-        	{% url 'contact' as contact_url %}
-        	<a class="nav-link" href="{{  contact_url }}">Contact</a>
-        </nav>-->
+  {% block content %}
+    <h1 class="site-heading text-center text-white d-none d-lg-block">
+      <span class="site-heading-upper text-primary mb-3">David &amp; Allen</span>
+      <span class="site-heading-lower">Welcome Home!</span>
+    </h1>
+    <section class="page-section clearfix">
+      <div class="container">
+        <div class="intro">
+          <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{% static 'images/adult_4.jpg' %}" alt="David and Allen having fun">
+          <div class="intro-text left-0 bg-faded rounded">
+            <h2 class="section-heading text-center mb-4">
+              <span class="section-heading-upper">celebrating</span>
+              <span class="section-heading-lower">25yrs of marriage</span>
+            </h2>
+            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo tempor enim, sit amet auctor metus commodo sed. Cras vehicula tempor condimentum. Fusce auctor laoreet mi. Proin non eros porttitor, tincidunt nulla nec, blandit nisi.
+            </p>
+            <div class="intro-button">
+              <a class="btn btn-warning btn-xl" href="#">Please Join Us!</a>
+            </div>
+          </div>
+        </div>
       </div>
-    </header>
-	{% endblock navbar %}
-
-	{% block content %}
-    <main role="main" class="inner cover">
-      <div class="cover-text-section">
-        <h1 class="cover-heading">
-        {% blocktrans with page_header|title as page_header %}
-          {{page_header}}
-        {% endblocktrans %}
-        </h1>
-        <p class="lead">
-          {% blocktrans with cover_intro|capfirst as cover_intro %}
-            {{cover_intro}}
-          {% endblocktrans %}
-        </p>
+    </section>
+    <section class="page-section family-value clearfix cta">
+      <div class="container">
+        <div class="row">
+          <div class="col-xl-9 mx-auto">
+            <div class="cta-inner rounded">
+              <h2 class="section-heading text-center mb-4">
+                <span class="section-heading-upper">Our Family Value</span>
+                <span class="section-heading-lower">PSALMS 23</span>
+              </h2>
+              <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur commodo tempor enim, sit amet auctor metus commodo sed. Cras vehicula tempor condimentum. Fusce auctor laoreet mi. Proin non eros porttitor, tincidunt nulla nec, blandit nisi. Pellentesque condimentum lacus eu leo interdum, vel mattis augue consectetur. Etiam varius dui dolor, eget tempor nibh vestibulum eget. Nulla sed arcu ut odio lobortis tristique.</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="lead">
-        {% url 'accounts:login' as login_url %}
-        <a href="{{ login_url }}" class="btn btn-outline-success btn-lg">Log In</a>
-        {% url 'accounts:register' as register_url %}
-        <a href="{{ register_url }}" class="btn btn-outline-primary btn-lg">Sign up</a>
-      </p>
-    </main>
-	{% endblock %}
-
-	{% block footer %}
-		<footer class="mastfoot mt-auto">
-      <div class="inner">
-        <p>
-			    {{ brand_name|capfirst }} &copy;
-			    {% now 'Y' %}, 
-			    {{request.get_host}} | All rights reserved <br> 
-			    <a href="#">Terms of Use | Privacy Policy</a>
-			  </p>
+    </section>
+    <section class="page-section family-card">
+      <div class="container">
+        <div class="row">
+          <div class="card-container col-lg-4">
+            <div class="card-flip">
+              <div class="front">
+                <!-- Card Contents Here -->
+                <div class="card husband">
+                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
+                  <div class="card-body">
+                    <h3 class="name">Tanisha Marvel</h3>
+                    <p class="profession text-center text-faded">CEO</p>
+                    <p class="text-center">"I'm the new Tanisha, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                  </div>
+                  <div class="card-footer">
+                    <i class="fa fa-mail-forward"></i> Auto Rotation
+                  </div>
+                </div>
+                <!--End front card contents -->
+              </div>
+              <div class="back">
+                <!-- Card Contents Here -->
+                <div class="card">
+                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
+                  <div class="card-body mx-auto">
+                    <h5 class="motto">"To Be or Not to Be, This is My Awesome Motto!"</h5>
+                    <blockquote class="blockquote mb-0">
+                      <p>Family is Not an Important Thing. It's Everything</p>
+                      <footer class="blockquote-footer">Michael J. Fox | <cite title="Source Title">Google.com</cite></footer>
+                    </blockquote>
+                    <p class="text-center mt-3"> More About Tanisha | <a href="#" class="card-link mo-about-link"><i class="fa fa-mail-forward"></i></a></p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="social-links text-center">
+                      <a href="#" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+                      <!--a href="#" class="google" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a-->
+                      <a href="#" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+                      <a href="#" class="linkedin" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+                      <a href="#" class="instagram" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+                      <a href="#" class="youtube" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!--End back card contents-->
+              </div>
+            </div>
+          </div>
+          <div class="card-container col-lg-4">
+            <div class="card-flip">
+              <div class="front">
+                <!-- Card Contents Here -->
+                <div class="card husband">
+                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
+                  <div class="card-body">
+                    <h3 class="name">Tanisha Marvel</h3>
+                    <p class="profession text-center text-faded">CEO</p>
+                    <p class="text-center">"I'm the new Tanisha, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                  </div>
+                  <div class="card-footer">
+                    <i class="fa fa-mail-forward"></i> Auto Rotation
+                  </div>
+                </div>
+                <!--End front card contents -->
+              </div>
+              <div class="back">
+                <!-- Card Contents Here -->
+                <div class="card">
+                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
+                  <div class="card-body mx-auto">
+                    <h5 class="motto">"To Be or Not to Be, This is My Awesome Motto!"</h5>
+                    <blockquote class="blockquote mb-0">
+                      <p>Family is Not an Important Thing. It's Everything</p>
+                      <footer class="blockquote-footer">Michael J. Fox | <cite title="Source Title">Google.com</cite></footer>
+                    </blockquote>
+                    <p class="text-center mt-3"> More About Tanisha | <a href="#" class="card-link mo-about-link"><i class="fa fa-mail-forward"></i></a></p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="social-links text-center">
+                      <a href="#" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+                      <!--a href="#" class="google" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a-->
+                      <a href="#" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+                      <a href="#" class="linkedin" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+                      <a href="#" class="instagram" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+                      <a href="#" class="youtube" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!--End back card contents-->
+              </div>
+            </div>
+          </div>
+          <div class="card-container col-lg-4">
+            <div class="card-flip">
+              <div class="front">
+                <!-- Card Contents Here -->
+                <div class="card husband">
+                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
+                  <div class="card-body">
+                    <h3 class="name">Tanisha Marvel</h3>
+                    <p class="profession text-center text-faded">CEO</p>
+                    <p class="text-center">"I'm the new Tanisha, and since I made it here I can make it anywhere, yeah, they love me everywhere"</p>
+                  </div>
+                  <div class="card-footer">
+                    <i class="fa fa-mail-forward"></i> Auto Rotation
+                  </div>
+                </div>
+                <!--End front card contents -->
+              </div>
+              <div class="back">
+                <!-- Card Contents Here -->
+                <div class="card">
+                  <img class="card-img-top" src='{% static "images/adult_5.jpg" %}' alt="Card image cap">
+                  <div class="card-body mx-auto">
+                    <h5 class="motto">"To Be or Not to Be, This is My Awesome Motto!"</h5>
+                    <blockquote class="blockquote mb-0">
+                      <p>Family is Not an Important Thing. It's Everything</p>
+                      <footer class="blockquote-footer">Michael J. Fox | <cite title="Source Title">Google.com</cite></footer>
+                    </blockquote>
+                    <p class="text-center mt-3"> More About Tanisha | <a href="#" class="card-link mo-about-link"><i class="fa fa-mail-forward"></i></a></p>
+                  </div>
+                  <div class="card-footer">
+                    <div class="social-links text-center">
+                      <a href="#" class="facebook" target="_blank"><i class="fa fa-facebook fa-fw"></i></a>
+                      <!--a href="#" class="google" target="_blank"><i class="fa fa-google-plus fa-fw"></i></a-->
+                      <a href="#" class="twitter" target="_blank"><i class="fa fa-twitter fa-fw"></i></a>
+                      <a href="#" class="linkedin" target="_blank"><i class="fa fa-linkedin fa-fw"></i></a>
+                      <a href="#" class="instagram" target="_blank"><i class="fa fa-instagram fa-fw"></i></a>
+                      <a href="#" class="youtube" target="_blank"><i class="fa fa-youtube fa-fw"></i></a>
+                    </div>
+                  </div>
+                </div>
+                <!--End back card contents-->
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
-  </div>
-	{% endblock footer %}
+    </section>
+  {% endblock %}

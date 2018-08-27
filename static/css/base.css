@@ -5,11 +5,7 @@
  */
 body {
   font-family: 'Lora';
-  /*background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url("/static/images/adult_1.jpg");*/
-  background: url("/static/images/adult_1.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  background-size: cover;
+  background: #f9f8fa;
 }
 
 h1,
@@ -384,4 +380,32 @@ h6 {
   .family-card [class*="col-"] {
     padding-bottom: inherit;
   }
+}
+
+/****Detail-page-extra*****/
+
+.about-detail {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  padding: 1rem;
+}
+.about-detail .about-detail-info-right > h3 {
+  color:#f2f2f2;
+  padding: 1rem;
+  text-align: center;
+}
+.about-detail-info-right {
+  border-radius: 5px;
+  background: rgba(230, 167, 86, 0.9);
+  padding: 1rem;
+}
+.about-detail .about-detail-info-left > h3 {
+  padding: 1rem;
+  text-align: center;
+}
+.about-detail-info-left {
+  border-radius: 5px;
+  background: rgba(254, 254, 254, 0.9);
+  padding: 1rem;
 }
