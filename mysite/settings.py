@@ -48,6 +48,7 @@ INSTALLED_APPS = [
 
      # Custom_Apps
     'accounts',
+    'gallery',
 
     # Third_Party_Apps
     'django.contrib.sites',
