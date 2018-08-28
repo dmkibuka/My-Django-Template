@@ -1,66 +1,16 @@
-{% extends 'base_2.html' %}
-
-  {% load i18n %}
-
-  {% load crispy_forms_tags %}
-
-  {% block extrahead %}
-    {% load  static %}
+    {% extends 'base_2.html' %}{% load i18n %}{% load crispy_forms_tags %}{% block extrahead %}{% load  static %}
     <!-- Signin CSS -->
-    <link rel="stylesheet" type="text/css" href=" {% static "css/signin.css" %} "> 
-  {% endblock extrahead %}
-
-  {% block page_title %} 
-    {% blocktrans with page_title|default:"contact us"|title as page_title %}
-      {{page_title}}
-    {% endblocktrans %} 
-  {% endblock page_title %} 
-
-  {% block content %}
-    {% url 'contact' as contact_url %}
+    <link rel="stylesheet" type="text/css" href=" {% static "css/signin.css" %}">{% endblock extrahead %}{% block page_title %}{% blocktrans with page_title|default:"contact us"|title as page_title %}{{page_title}}{% endblocktrans %}{% endblock page_title %}{% block content %}{% url 'contact' as contact_url %}
     <section class="contact-features" id="contact-features">
       <div class="container">
-        <!--div class="section-heading">
-          <h2>
-            {% if request.path == contact_url  %}
-              {% blocktrans with section_hdg_title|default:'contact us'|upper as section_hdg_title %}
-                {{section_hdg_title}}  
-              {% endblocktrans %} 
-            {% else %}
-              {% blocktrans with section_hdg_title|default:'share with us'|upper as section_hdg_title %}
-                {{section_hdg_title}}  
-              {% endblocktrans %}  
-            {% endif %}
-          </h2>
-        </div-->
         <div class="row">
           <div class="col-lg-4 offset-lg-8">
             <div class="card card-top bg-light">
               <div class="card-body">
                 <div class="card-title card-title-top">
-                  <h3 data-title="{% if request.path == contact_url  %}
-                      {% blocktrans with contact_top_title|default:'contact us'|upper as contact_top_title %}
-                        {{contact_top_title}}  
-                      {% endblocktrans %}  
-                    {% else %}
-                      {% blocktrans with contact_top_title|default:'please complete form'|upper as contact_top_title %}
-                        {{contact_top_title}}  
-                      {% endblocktrans %}  
-                    {% endif %}">
-                  </h3>
+                  <h3 data-title="{% if request.path == contact_url  %}{% blocktrans with contact_top_title|default:'contact us'|upper as contact_top_title %}{{contact_top_title}}{% endblocktrans %}{% else %}{% blocktrans with contact_top_title|default:'please complete form'|upper as contact_top_title %}{{contact_top_title}}{% endblocktrans %}{% endif %}"></h3>
                 </div>
-                <form action="{% if request.path == contact_url %}{{contact_url}}{% else %}{{form_url}}{% endif %}" class="contact-form" method="POST">
-                  {% csrf_token %}
-                  {{ form|crispy }}
-                  <button type='submit' class='btn btn-outline-warning'>
-                  {% if request.path == contact_url %}
-                    {% blocktrans with submit_btn|default:"send message"|title as submit_btn %}
-                        {{submit_btn}}
-                    {% endblocktrans %}
-                  {% else %}
-                    {% trans "submit" %}
-                  {% endif %}
-                  </button>
+                <form action="{% if request.path == contact_url %}{{contact_url}}{% else %}{{form_url}}{% endif %}" class="contact-form" method="POST">{% csrf_token %}{{ form|crispy }}<button type='submit' class='btn btn-outline-warning'>{% if request.path == contact_url %}{% blocktrans with submit_btn|default:"send message"|title as submit_btn %}{{submit_btn}}{% endblocktrans %}{% else %}{% trans "submit" %}{% endif %}</button>
                 </form>
               </div>
             </div>
@@ -76,16 +26,7 @@
               <div class="card-title text-center">
                 <h3>
                   <i class="fa fa-map-marker" aria-hidden="true"></i>
-                  <br>
-                  {% if request.path == contact_url  %}
-                    {% blocktrans with contact_btm_title|default:"mailing"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% else %} 
-                    {% blocktrans with contact_btm_title|default:"home"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% endif %}
+                  <br>{% if request.path == contact_url  %}{% blocktrans with contact_btm_title|default:""|title as contact_btm_title %}{{contact_btm_title}}{% endblocktrans %}{% else %}{% blocktrans with contact_btm_title|default:"home"|title as contact_btm_title %}{{contact_btm_title}}{% endblocktrans %}{% endif %}
                 </h3>
               </div>
               <div class="card-body text-center">
@@ -98,16 +39,7 @@
               <div class="card-title text-center">
                 <h3>
                   <i class="fa fa-phone" aria-hidden="true"></i>
-                  <br>
-                  {% if request.path == contact_url  %}
-                    {% blocktrans with contact_btm_title|default:"call us"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% else %} 
-                    {% blocktrans with contact_btm_title|default:"telephone"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% endif %}
+                  <br>{% if request.path == contact_url  %}{% blocktrans with contact_btm_title|default:""|title as contact_btm_title %}{{contact_btm_title}}{% endblocktrans %}{% else %}{% blocktrans with contact_btm_title|default:"telephone"|title as contact_btm_title %}{{contact_btm_title}}{% endblocktrans %}{% endif %}
                 </h3>
               </div>
               <div class="card-body text-center">
@@ -120,16 +52,7 @@
               <div class="card-title text-center">
                 <h3>
                   <i class="fa fa-envelope" aria-hidden="true"></i>
-                  <br>
-                  {% if request.path == contact_url  %}
-                    {% blocktrans with contact_btm_title|default:"email us"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% else %} 
-                    {% blocktrans with contact_btm_title|default:"our emails"|title as contact_btm_title %}
-                      {{contact_btm_title}}
-                    {% endblocktrans %}
-                  {% endif %}
+                  <br>{% if request.path == contact_url  %}{% blocktrans with contact_btm_title|default:""|title as contact_btm_title %}{{contact_btm_title}}{% endblocktrans %}{% else %}{% blocktrans with contact_btm_title|default:"our emails"|title as contact_btm_title %}{{contact_btm_title}}{% endblocktrans %}{% endif %}
                 </h3>
               </div>
               <div class="card-body text-center">
@@ -139,5 +62,4 @@
           </div>
         </div>
       </div>
-    </section>
-  {% endblock %}
+    </section>{% endblock %}

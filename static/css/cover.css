@@ -91,9 +91,10 @@ body {
 
 /** Footer **/
 .mastfoot {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-size: .6rem;
   color: rgba(255, 255, 255, .5);
 }
 
-footer {
-  font-size: .6rem;
-}

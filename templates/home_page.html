@@ -1,14 +1,7 @@
-{% extends 'base.html' %}
-
-  {% load i18n %}
-
-  {% load crispy_forms_tags %}
-
-  {% block extrahead %}
-    {% load  static %}
-      <!-- Custom fonts for this template -->
-      <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-      <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
+    {% extends 'base.html' %}{% load i18n %}{% load crispy_forms_tags %}{% block extrahead %}{% load  static %}
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">
     <style>
       body {
         background: url("/static/images/adult_1.jpg");
@@ -16,16 +9,7 @@
         background-position: center top;
         background-size: cover;
       }
-    </style> 
-  {% endblock extrahead %}
-
-  {% block page_title %} 
-    {% blocktrans with page_title|default:"welcome | home"|title as page_title %}
-      {{page_title}}
-    {% endblocktrans %} 
-  {% endblock page_title %} 
-
-  {% block content %}
+    </style>{% endblock extrahead %}{% block page_title %} {% blocktrans with page_title|default:"welcome | home"|title as page_title %}{{page_title}}{% endblocktrans %}{% endblock page_title %}{% block content %}
     <h1 class="site-heading text-center text-white d-none d-lg-block">
       <span class="site-heading-upper text-primary mb-3">David &amp; Allen</span>
       <span class="site-heading-lower">Welcome Home!</span>

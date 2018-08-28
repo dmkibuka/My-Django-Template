@@ -1,28 +1,17 @@
-{% extends "base/base_2.html" %}
-
-	{% load i18n %}
-
-	{% block extrahead %}
-		{% load  static %}
+		{% extends "base_2.html" %}{% load i18n %}{% block extrahead %}{% load  static %}
 		<!-- Cover CSS -->
-		<link rel="stylesheet" type="text/css" href=" {% static "css/signin.css" %} "> 
-	{% endblock extrahead %}
-
-	{% block page_title %}{% trans "400 Error" %}{% endblock page_title %} 
-
-	{% block content %}
-	<div class="container">
-		<div class="row mt-5">
-  			<div class="col-lg-8 offset-lg-2">
-  				<div class="card mx-auto">
-  					<div class="card-body text-center">
-					    <h5 class="card-title font-weight-normal text-center">{% trans "400 Error: Bad Request" %}</h5>
-					    <hr>
-					    <p> {% trans "Bad Request, Request denied" %} </p>
-  					</div>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">{% endblock extrahead %}{% block page_title %}{% trans "400 Error" %}{% endblock page_title %}{% block content %}
+		<div class="container">
+			<div class="row mt-5">
+				<div class="col-lg-8 offset-lg-2">
+					<div class="card mx-auto">
+						<div class="card-body text-center">
+						    <h5 class="card-title font-weight-normal text-center">{% trans "400 Error: Bad Request" %}</h5>
+						    <hr>
+						    <p> {% trans "Bad Request, Request denied" %} </p>
+						</div>
+					</div>
 				</div>
-  			</div>
-		</div>
-	</div>	
-	{% endblock %}
+			</div>
+		</div>{% endblock %}
 

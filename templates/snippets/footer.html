@@ -1,11 +1,8 @@
-	
-<footer class="container-fluid" id="footer">
-    <center>
-        <p>
-           &copy;
-           {% now 'Y' %}, 
-           {{request.get_host}} | All rights reserved <br> 
-           <a href="#">Terms of Use | Privacy Policy</a>
-        </p>
-    </center>
-</footer>
+	<footer class="mastfoot mt-auto">
+	    <div class="inner">
+	        <p>
+	           &copy;{% now 'Y' %},{{request.get_host}} | All rights reserved <br> 
+	           <a href="#">Terms of Use | Privacy Policy</a>
+	        </p>
+	    </div>
+	</footer>

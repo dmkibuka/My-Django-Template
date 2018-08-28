@@ -18,10 +18,6 @@ h6 {
   font-family: 'Lora';
 }
 
-/*p {
-  line-height: 1.75;
-}*/
-
 .text-faded {
   color: rgba(255, 255, 255, 0.3);
 }
@@ -66,12 +62,10 @@ h6 {
 .section-heading .section-heading-upper {
   display: block;
   font-size: 1rem;
-  /*font-weight: 1000;*/
 }
 
 .section-heading .section-heading-lower {
   display: block;
-  /*font-size: 3rem;*/
   font-weight: 100;
 }
 
@@ -191,8 +185,16 @@ h6 {
   }
 }
 
+/** Footer **/
+.mastfoot {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  font-size: .6rem;
+  color: rgba(255, 255, 255, .5);
+}
 
-/************ Buttons**********/
+/** Buttons**/
 
 .btn-warning {
   display: block;
@@ -216,7 +218,7 @@ h6 {
 }
 
 
-/******** FLIPPING CARDS**********/
+/** FLIPPING CARDS**/
 
 .family-card .card-container {
   perspective: 700px;
@@ -264,7 +266,7 @@ h6 {
 }
 
 
-/********FLIPPING CARD STYLES **************/
+/**FLIPPING CARD STYLES**/
 
 .family-card [class*="col-"] {
   padding-top: 1.25rem;
@@ -371,7 +373,7 @@ h6 {
   }
 }
 
-/****Detail-page-extra*****/
+/**Detail-page-extra**/
 
 .about-detail {
   display: grid;
