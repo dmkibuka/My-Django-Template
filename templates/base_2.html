@@ -5,7 +5,7 @@
     {% include "snippets/header.html" %}{% block extrahead %}{% endblock extrahead %}
     <title>{% block page_title %}{% endblock page_title %}</title>
   </head>
-  <body>{% block navbar %}{% endblock navbar %}{% block carousel %}{% endblock carousel %}{% block content %}{% endblock content %}{% url 'home' as home_url %}{% if not request.path == home_url %}{% include "snippets/footer.html" %}{% endif %}{% include "snippets/js.html" %}
+  <body>{% block navbar %}{% endblock navbar %}{% block carousel %}{% endblock carousel %}{% block content %}{% url 'home' as home_url %}{% if not request.path == home_url %}{% include "snippets/footer.html" %}{% endif %}{% endblock content %}{% include "snippets/js.html" %}
     <!-- Optional JavaScript -->
     {% block extrajs %}{% endblock extrajs %}
   </body>

@@ -6,7 +6,7 @@
     <title> {% block page_title %}{% endblock page_title %} </title>  
   </head>
   <body>
-    {% include "snippets/navbar.html" %}{% block carousel %}{% endblock carousel %}{% block content %}{% endblock content %}{% include "snippets/footer.html" %}{% include "snippets/js.html" %}
+    {% include "snippets/navbar.html" %}{% block carousel %}{% endblock carousel %}{% block content %}{% include "snippets/footer.html" %}{% endblock content %}{% include "snippets/js.html" %}
     <!-- Optional JavaScript -->
   	{% block extrajs %}{% endblock extrajs %}
   </body>
