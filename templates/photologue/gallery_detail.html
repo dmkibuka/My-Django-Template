@@ -1,20 +1,38 @@
-{% extends "photologue/root.html" %}
-{% load i18n %}
-
-{% block title %}{{ gallery.title }}{% endblock %}
-
-{% block content %}
-
-	<div class="row col-lg-12">
-        <h1 class="page-header">{{ gallery.title }}</h1>
-        <p class="muted"><small>{% trans "Published" %} {{ gallery.date_added }}</small></p>        
-        {% if gallery.description %}{{ gallery.description|safe }}{% endif %}
-	    {% for photo in gallery.public %}
-	        <a href="{{ photo.get_absolute_url }}">
-	             <img src="{{ photo.get_thumbnail_url }}" class="thumbnail" alt="{{ photo.title }}">
-	        </a>
-	    {% endfor %}
-        <div><a href="{% url 'photologue:gallery-list' %}" class="btn btn-default">{% trans "View all galleries" %}</a></div>
-	</div>
-
-{% endblock %}
+		{% extends "photologue/root.html" %}
+	    {% load i18n %}
+	    {% block extrahead %}{% load  static %}<!-- Custom fonts for this template -->
+	    <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+	    <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">{% endblock extrahead %}
+	    {% block page_title %}{% blocktrans with gallery.title|default:"photo galleries"|title as gallery.title %}{{gallery.title}}{% endblocktrans %}{% endblock page_title %}{% block content %}
+	    <h1 class="site-heading text-center text-white d-none d-lg-block">
+	        <span class="site-heading-upper text-warning mb-3">{% blocktrans with gallery.title|default:"our gallery"|upper as gallery.title %}{{gallery.title}}{% endblocktrans %}</span>
+	        <span class="site-heading-lower text-muted">{% blocktrans with site_heading_lower|default:"photo gallery"|upper as site_heading_lower %}{{site_heading_lower}}{% endblocktrans %}</span>
+	    </h1>
+	    <section class="gallery-select-feature" id="gallery-select-feature">
+	    	<div class="container">
+	    		<div class="row">
+	    			<div class="card mb-3">
+	    				<div class="row">
+	    					<div class="col-lg-4">{% for photo in gallery.sample  %}{% if forloop.counter0 == 0 %}
+	                        <a href="{{ photo.gallery.get_absolute_url }}"><img class="card-img-top" src="{{ photo.get_display_url }}" alt="{{ photo.title }}"></a>{% endif %}{% endfor %}</div>
+	    					<div class="col-lg-8">
+	    						<div class="card-body">
+	    							<h5 class="card-title"> {{gallery.title}} </h5>
+	    							<p class="card-text">{{ gallery.description|safe }}</p>
+	    							<a href="" class="card-link"></a>
+	    						</div>
+	    					</div>
+	    				</div>
+	    			</div>{% for photo in gallery.public %}
+		    		<div class="col-lg-3 col-md-4 col-sm-6">
+		          		<a href="{{ photo.get_absolute_url }}" class="d-block mb-4 w-100">
+		            		<img class="img-fluid img-thumbnail" src="{{ photo.get_display_url }}" alt="{{ photo.title }}">
+		          		</a>
+		    		</div>{% endfor %}
+		    		<div class="col-12 text-center">
+		    			<a href="{% url 'photologue:gallery-list' %}" class="btn btn-outline-secondary">{% trans "View All Galleries" %}</a>
+		    		</div>
+	    		</div>
+	    	</div>
+	    </section>
+	    {{block.super}}{% endblock content %}

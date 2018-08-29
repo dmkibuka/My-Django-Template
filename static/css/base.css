@@ -178,6 +178,10 @@ h6 {
   font-size: .85rem;
 }
 
+.font-weight-light {
+  font-weight: 100 !important;
+}
+
 @media (min-width: 992px) {
   .family-value .cta-inner > p {
     text-align: center;
@@ -209,13 +213,9 @@ h6 {
   color: rgb(230, 167, 86);
 }
 
-.footer {
+/*.footer {
   background-color: rgba(47, 23, 15, 0.9);
-}
-
-.font-weight-light {
-  font-weight: 100 !important;
-}
+}*/
 
 
 /** FLIPPING CARDS**/
