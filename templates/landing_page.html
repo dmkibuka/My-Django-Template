@@ -5,11 +5,9 @@
       <header class="masthead mb-auto">
         <div class="inner">
           <h3 class="masthead-brand">{{ brand_name|capfirst }}</h3>
-            <nav class="nav nav-masthead justify-content-center">
-            	{% url 'accounts:login' as login_url %}
-            	<a class="nav-link" href="{{login_url}}">{% trans "Login" %}</a>
-              {% url 'accounts:register' as register_url %}
-              <a class="nav-link" href="{{register_url}}">{% trans "Register" %}</a>
+            <nav class="nav nav-masthead justify-content-center">{% url 'accounts:login' as login_url %}
+            	<a class="nav-link" href="{{login_url}}">{% trans "Login" %}</a>{% url 'accounts:register' as register_url %}
+              <a class="nav-link" href="{{register_url}}">{% trans "Sign-up" %}</a>
             </nav>
         </div>
       </header>{% endblock navbar %}{% block content %}
