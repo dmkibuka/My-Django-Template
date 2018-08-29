@@ -407,8 +407,3 @@ h6 {
   padding-top: 1.25rem;
 }
 
-@media (min-width: 992px) {
-  .family-gallery [class*="col-"] {
-    padding-top: inherit;
-  }
-}
