@@ -6,7 +6,7 @@
         {% block page_title %}{% blocktrans with object.title|default:"photo galleries"|title as object.title %}{{object.title}}{% endblocktrans %}{% endblock page_title %}{% block content %}
         <h1 class="site-heading text-center text-white d-none d-lg-block">
             <span class="site-heading-upper text-muted mb-3 d-none">{% blocktrans with object.title|default:"our gallery"|add:" gallery"|upper as object.title %}{{object.title}}{% endblocktrans %}</span>
-            <span class="site-heading-lower text-muted">{% blocktrans with object.title|default:"photo gallery"|add:" gallery"|upper as object.title %}{{object.title}}{% endblocktrans %}</span>
+            <span class="site-heading-lower text-muted">{% blocktrans with object.title|default:"photo gallery"|upper as object.title %}{{object.title}}{% endblocktrans %}</span>
         </h1>
         <section class="photo-detail-feature" id="photo-detail-feature">
             <div class="container">
@@ -16,7 +16,7 @@
                             <img src="{{ object.get_display_url }}" alt="{{ object.title }}" class="card-img-top w-100">
                             <div class="card-body">
                                 <h3 class="card-title">{% blocktrans with object.title|title as object.title %}{{object.title}}{% endblocktrans %}</h3>
-                                <p class="card-text">{{ object.description|safe }}</p>
+                                <p class="card-text">{{ object.caption|safe }}</p>
                                 <p class="text-muted"><small>{% trans "Published" %} {{ object.date_added }}</small></p>
                             </div>
                         </div>
@@ -24,8 +24,4 @@
                 </div>
             </div>
         </section>
-
-
-
-
-{% endblock %}
+        {{block.super}}{% endblock %}
