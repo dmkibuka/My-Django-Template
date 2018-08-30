@@ -32,7 +32,9 @@ urlpatterns = [
     path('account/', RedirectView.as_view(url='/accounts')),
     path('welcome/', HomePageView.as_view(), name='welcome'),
     path('welcome/family/', FamilyPageView.as_view(), name='family'),
-    path('photologue/', include('photologue.urls')),
+    path('gallery/', include('gallery.urls', namespace='gallery-custom')),
+    path('photologue/', include('gallery.urls')),
+    path('photologue/', include('photologue.urls', namespace='photologue')),
     path('settings/', RedirectView.as_view(url='/accounts')),
     path('admin/', admin.site.urls),
 ]

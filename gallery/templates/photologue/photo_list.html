@@ -1,0 +1,30 @@
+        {% extends "photologue/root.html" %}
+        {% load i18n %}
+        {% block extrahead %}{% load  static %}<!-- Custom fonts for this template -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i" rel="stylesheet">{% endblock extrahead %}
+        {% block page_title %}{% blocktrans with object.title|default:"all our photos"|title as object.title %}{{object.title}}{% endblocktrans %}{% endblock page_title %}{% block content %}
+        <h1 class="site-heading text-center text-white d-none d-lg-block">
+            <span class="site-heading-upper text-muted mb-3 d-none">{% blocktrans with object.title|default:"our gallery"|add:" gallery"|upper as object.title %}{{object.title}}{% endblocktrans %}</span>
+            <span class="site-heading-lower text-muted">{% blocktrans with object.title|default:"all our photos"|upper as object.title %}{{object.title}}{% endblocktrans %}</span>
+        </h1>
+        <section class="photo-list-feature" id="photo-list-feature">
+        	<div class="container">
+        		<div class="row"> {% if object_list %} {% for photo in object_list %}
+        			<div class="col-lg-3 col-md-4 col-sm-6">
+		          		<a href="{% url 'gallery:gallery-photo-detail' photo.slug %}" class="d-block mb-4 w-100">
+		            		<img class="img-fluid" src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}">
+		          		</a>
+		    		</div>{% endfor %}{% else %}
+		    		<div class="col-md offset-md-3">
+		    			<div class="card mx-auto bg-dark text-white">
+		    				<div class="card-body text-center">
+		    					<h3 class="card-title">{% blocktrans with no_photo_title|default: "sorry!!"|title as no_photo_title %}{{no_photo_title}}{% endblocktrans %}</h3>
+		    					<p class="card-text">{% blocktrans with no_photo_message|default: "no photo images have been uploaded yet, ceck again when you visit our site"|upper as no_photo_message %}{{no_photo_message}}{% endblocktrans %}</p>
+		    				</div>
+		    			</div>
+		    		</div>{% endif %}{% include "photologue/snippets/paginator.html" %}
+        		</div>
+        	</div>
+        </section>{{block.super}}{% endblock %}
+

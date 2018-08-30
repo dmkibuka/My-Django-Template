@@ -14,7 +14,7 @@
 	    			<div class="card mb-3 d-none d-lg-block">
 	    				<div class="row">
 	    					<div class="col-lg-4">{% for photo in gallery.sample  %}{% if forloop.counter0 == 0 %}
-	                        <img class="card-img-top h-100" src="{{ photo.get_display_url }}" alt="{{ photo.title }}">{% endif %}{% endfor %}</div>
+	                        <img class="card-img-top img-fluid h-100" src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}">{% endif %}{% endfor %}</div>
 	    					<div class="col-lg-8">
 	    						<div class="card-body">
 	    							<h5 class="card-title"> {{gallery.title}} </h5>
@@ -26,12 +26,12 @@
 	    				</div>
 	    			</div>{% endif %}{% for photo in gallery.public %}
 		    		<div class="col-lg-3 col-md-4 col-sm-6">
-		          		<a href="{{ photo.get_absolute_url }}" class="d-block mb-4 w-100">
-		            		<img class="img-fluid img-thumbnail" src="{{ photo.get_display_url }}" alt="{{ photo.title }}">
+		          		<a href="{% url 'gallery:gallery-photo-detail' photo.slug %}" class="d-block mb-4 w-100">
+		            		<img class="img-fluid" src="{{ photo.get_thumbnail_url }}" alt="{{ photo.title }}">
 		          		</a>
 		    		</div>{% endfor %}
 		    		<div class="col-12 text-center mb-4">
-		    			<a href="{% url 'photologue:gallery-list' %}" class="btn btn-outline-secondary">{% trans "View All Galleries" %}</a>
+		    			<a href="{% url 'gallery:gallery-list' %}" class="btn btn-outline-secondary">{% trans "View All Galleries" %}</a>
 		    		</div>
 	    		</div>
 	    	</div>
