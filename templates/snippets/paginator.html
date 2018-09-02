@@ -1,12 +1,12 @@
-    {% if is_paginated %}
-    <div class="row col-12 text-center">
-      <div class="pagination">
-        <span class="page-links">{% if page_obj.has_previous %}
-          <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>{% endif %}
-          <span class="page-current">
-            <p>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.</p>
-          </span>{% if page_obj.has_next %}
-          <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>{% endif %}
-        </span>
+    {% load i18n %}{% if is_paginated %}
+    <div class="row">
+      <div class="col pagination">
+        <ul class="list-inline page-links mb-0 mt-2 mx-auto">{% if page_obj.has_previous %}
+            <li class="list-inline-item p-2"><a href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><i class="fa fa-arrow-left" aria-hidden="true"></i>{% trans "Previous" %}</a></li>{% endif %}
+            <li class="list-inline-item page-current p-2">
+              <p class="text-muted">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</p>
+            </li>{% if page_obj.has_next %}
+            <li class="list-inline-item p-2"><a href="{{ request.path }}?page={{ page_obj.next_page_number }}"><i class="fa fa-arrow-right" aria-hidden="true"></i>{% trans "Next" %}</a></li>{% endif %}
+        </ul>
       </div>
     </div>{% endif %}
