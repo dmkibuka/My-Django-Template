@@ -1,6 +1,6 @@
     {% extends 'base_2.html' %}{% load i18n %}{% load crispy_forms_tags %}{% block extrahead %}{% load  static %}
     <!-- Signin CSS -->
-    <link rel="stylesheet" type="text/css" href=" {% static "css/signin.css" %}">{% endblock extrahead %}{% block page_title %}{% blocktrans with page_title|default:"contact us"|title as page_title %}{{page_title}}{% endblocktrans %}{% endblock page_title %}{% block content %}{% url 'contact' as contact_url %}
+    <link rel="stylesheet" type="text/css" href=" {% static 'css/signin.css' %}">{% endblock extrahead %}{% block page_title %}{% blocktrans with page_title|default:"contact us"|title as page_title %}{{page_title}}{% endblocktrans %}{% endblock page_title %}{% block content %}{% url 'contact' as contact_url %}
     <section class="contact-features" id="contact-features">
       <div class="container">
         <div class="row">
